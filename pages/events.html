@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & Workshops - StudentHub Portal</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- Accessible Skip to Content Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header role="banner">
+        <div class="header-content">
+            <div>
+                <h1>StudentHub Portal</h1>
+                <p class="admin-label">Events & Workshops</p>
+            </div>
+            <img src="studenthub.png" alt="StudentHub Official Portal Logo" class="profile-logo">
+        </div>
+        <nav aria-label="Primary Navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="events.html" class="active" aria-current="page">Events</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="assignment.html">Assignment</a>
+            <a href="timetable.html">Timetable</a>
+            <a href="notice.html">Notice</a>
+            <a href="faq.html">FAQ</a>
+            <a href="feedback.html">Feedback</a>
+            <a href="contact.html">Contact</a>
+            <a href="admin.html">All Students</a>
+        </nav>
+    </header>
+
+    <!-- Accessible Breadcrumb Navigation -->
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item" aria-current="page">Events & Workshops</li>
+        </ol>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <section class="admin-container">
+            <div class="admin-heading">
+                <div>
+                    <h2>Campus Events & Technical Workshops</h2>
+                    <p>Register for university hackathons, expert guest seminars, and hands-on bootcamps.</p>
+                </div>
+                <button class="primary-btn" onclick="alert('Viewing your registered event tickets.')">🎟️ My Event Passes</button>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="student-stats">
+                <div class="stat-card">
+                    <span class="stat-icon">🚀</span>
+                    <div>
+                        <h3>4</h3>
+                        <p>Total Events</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🎯</span>
+                    <div>
+                        <h3>2</h3>
+                        <p>Upcoming Workshops</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🏆</span>
+                    <div>
+                        <h3>₹50K</h3>
+                        <p>Hackathon Prizes</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🎟️</span>
+                    <div>
+                        <h3>2</h3>
+                        <p>Registered Passes</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Controls -->
+            <div class="student-controls">
+                <div class="search-box">
+                    <input type="text" id="searchEvent" placeholder="Search events by title, venue or speaker...">
+                </div>
+                <select id="eventCategoryFilter">
+                    <option value="all">All Event Types</option>
+                    <option value="Workshop">Hands-on Workshops</option>
+                    <option value="Seminar">Seminars</option>
+                    <option value="Competition">Hackathons / Competitions</option>
+                </select>
+                <button id="clearEventFilter" class="clear-btn" type="button">Clear</button>
+            </div>
+
+            <!-- Table -->
+            <div class="table-container">
+                <table id="eventsTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Event Name</th>
+                            <th>Category</th>
+                            <th>Date & Time</th>
+                            <th>Venue</th>
+                            <th>Speaker / Organizer</th>
+                            <th>Seats</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1</strong></td>
+                            <td><strong>🚀 Full-Stack Web Development Bootcamp</strong></td>
+                            <td><span class="badge badge-active">Workshop</span></td>
+                            <td>Aug 20, 2026 (10 AM - 4 PM)</td>
+                            <td>Computer Lab 3</td>
+                            <td>Dr. Rajesh Sharma</td>
+                            <td>45 / 60 Full</td>
+                            <td><button class="table-btn table-btn-view" style="background:#dcfce7; color:#15803d;" onclick="alert('✅ You are registered for this event!')">Registered</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>2</strong></td>
+                            <td><strong>🤖 AI & Machine Learning Seminar</strong></td>
+                            <td><span class="badge badge-info">Seminar</span></td>
+                            <td>Aug 28, 2026 (2 PM - 5 PM)</td>
+                            <td>Main Auditorium</td>
+                            <td>Prof. Ananya Patel</td>
+                            <td>120 / 150 Full</td>
+                            <td><button class="table-btn table-btn-view" style="background:#dcfce7; color:#15803d;" onclick="alert('✅ You are registered for this seminar!')">Registered</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>3</strong></td>
+                            <td><strong>🏆 Annual Hackathon - Code For Future 4.0</strong></td>
+                            <td><span class="badge badge-pending">Competition</span></td>
+                            <td>Sep 12-13, 2026 (24 Hours)</td>
+                            <td>Innovation Center</td>
+                            <td>Tech Council</td>
+                            <td>140 / 200</td>
+                            <td><button class="table-btn table-btn-view" onclick="this.textContent='Registered'; this.style.background='#dcfce7'; this.style.color='#15803d'; alert('🎉 Successfully registered for Hackathon 4.0!')">Register</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>4</strong></td>
+                            <td><strong>☁️ Cloud Computing & DevOps Masterclass</strong></td>
+                            <td><span class="badge badge-active">Masterclass</span></td>
+                            <td>Sep 25, 2026 (11 AM - 2 PM)</td>
+                            <td>Seminar Hall B</td>
+                            <td>Mr. Sameer Desai (AWS)</td>
+                            <td>32 / 80</td>
+                            <td><button class="table-btn table-btn-view" onclick="this.textContent='Registered'; this.style.background='#dcfce7'; this.style.color='#15803d'; alert('🎉 Successfully registered for DevOps Masterclass!')">Register</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 StudentHub Portal. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("searchEvent").addEventListener("input", function() {
+            const query = this.value.toLowerCase();
+            document.querySelectorAll("#eventsTable tbody tr").forEach(r => {
+                r.style.display = r.textContent.toLowerCase().includes(query) ? "" : "none";
+            });
+        });
+        document.getElementById("clearEventFilter").addEventListener("click", function() {
+            document.getElementById("searchEvent").value = "";
+            document.getElementById("eventCategoryFilter").value = "all";
+            document.querySelectorAll("#eventsTable tbody tr").forEach(r => r.style.display = "");
+        });
+    </script>
+</body>
+</html>

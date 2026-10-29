@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Record - StudentHub Portal</title>
+    <meta name="description" content="View individual student subject-wise theory and practical attendance, aggregate percentages, and university examination eligibility status.">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .progress-bar-container {
+            width: 100%;
+            height: 8px;
+            background-color: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 6px;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.4s ease;
+        }
+        .bg-success { background-color: #10b981; }
+        .bg-warning { background-color: #f59e0b; }
+        .bg-danger  { background-color: #ef4444; }
+        .badge-danger {
+            background-color: #fee2e2;
+            color: #dc2626;
+            border: 1px solid #fca5a5;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .student-switcher-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #f8fafc;
+            padding: 10px 16px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Accessible Skip to Content Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header role="banner">
+        <div class="header-content">
+            <div>
+                <h1>StudentHub Portal</h1>
+                <p class="admin-label">Attendance Management</p>
+            </div>
+            <img src="studenthub.png" alt="StudentHub Official Portal Logo" class="profile-logo">
+        </div>
+        <nav aria-label="Primary Navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="events.html">Events</a>
+            <a href="attendance.html" class="active" aria-current="page">Attendance</a>
+            <a href="assignment.html">Assignment</a>
+            <a href="timetable.html">Timetable</a>
+            <a href="notice.html">Notice</a>
+            <a href="faq.html">FAQ</a>
+            <a href="feedback.html">Feedback</a>
+            <a href="contact.html">Contact</a>
+            <a href="admin.html">All Students</a>
+        </nav>
+    </header>
+
+    <!-- Accessible Breadcrumb Navigation -->
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="dashboard.html">Dashboard</a></li>
+            <li class="breadcrumb-item" aria-current="page">Attendance Records</li>
+        </ol>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <section class="admin-container" aria-labelledby="attendance-heading">
+            <div class="admin-heading">
+                <div>
+                    <h2 id="attendance-heading">Student Attendance Records</h2>
+                    <p id="studentSubtitle">Loading student attendance profile...</p>
+                </div>
+                <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                    <button class="primary-btn" type="button" onclick="window.print()">📥 Print / PDF Report</button>
+                    <a href="dashboard.html" class="secondary-btn">← Back to Dashboard</a>
+                </div>
+            </div>
+
+            <!-- Student Switcher (Supports Multi-Student Lookup & Admin View) -->
+            <div class="student-switcher-box" role="region" aria-label="Switch Active Student">
+                <label for="studentSelect" style="font-weight: 600; font-size: 14px; color: #1e3a5f;">
+                    👤 Select Student to View Attendance:
+                </label>
+                <select id="studentSelect" style="padding: 6px 12px; border-radius: 6px; border: 1px solid #cbd5e1; font-family: inherit; font-size: 14px; min-width: 280px;" aria-label="Choose student record">
+                    <option value="23CE045">Mayank Shukal (23CE045) - Computer Engineering</option>
+                    <option value="23IT001">John Doe (23IT001) - Information Technology</option>
+                    <option value="23IT012">Aarav Sharma (23IT012) - Information Technology</option>
+                    <option value="23CE088">Priya Patel (23CE088) - Computer Engineering [Shortage]</option>
+                    <option value="23CS019">Rohan Desai (23CS019) - Computer Science</option>
+                    <option value="23IT042">Rahul Verma (23IT042) - Information Technology</option>
+                </select>
+                <span id="activeBadge" class="badge badge-active">Logged-in Profile</span>
+            </div>
+
+            <!-- Shortage Alert Banner (Appears dynamically if attendance < 75%) -->
+            <div id="attendanceAlertBox" role="alert" style="display: none; margin-bottom: 22px; padding: 14px 18px; background-color: #fef2f2; border-left: 5px solid #ef4444; border-radius: 6px; color: #991b1b;">
+                <strong>⚠️ Attendance Shortage Warning:</strong>
+                <span id="attendanceAlertText">One or more subjects are below the mandatory 75% threshold.</span>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="student-stats" role="region" aria-label="Attendance Aggregate Metrics">
+                <div class="stat-card">
+                    <span class="stat-icon" aria-hidden="true">📊</span>
+                    <div>
+                        <h3 id="statPercentage">--%</h3>
+                        <p>Overall Percentage</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon" aria-hidden="true">✅</span>
+                    <div>
+                        <h3 id="statAttended">--</h3>
+                        <p>Classes Attended</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon" aria-hidden="true">📅</span>
+                    <div>
+                        <h3 id="statTotal">--</h3>
+                        <p>Total Classes</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon" aria-hidden="true">🛡️</span>
+                    <div>
+                        <h3 id="statStatus" style="font-size:18px;">--</h3>
+                        <p>Exam Eligibility</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Controls -->
+            <div class="student-controls" role="search" aria-label="Filter subjects">
+                <div class="search-box">
+                    <label for="searchAttendance" class="visually-hidden" style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0);">Search courses</label>
+                    <input type="text" id="searchAttendance" placeholder="Search by course name or subject code..." aria-label="Search courses">
+                </div>
+                <select id="attendanceStatusFilter" aria-label="Filter by Attendance Bracket">
+                    <option value="all">All Attendance Brackets</option>
+                    <option value="Good">Above 85% (Good)</option>
+                    <option value="Moderate">75% - 85% (Moderate)</option>
+                    <option value="Low">Below 75% (Shortage / Low)</option>
+                </select>
+                <button id="clearAttFilter" class="clear-btn" type="button">Clear Filters</button>
+            </div>
+
+            <!-- Table -->
+            <div class="table-container">
+                <table id="attendanceTable" aria-label="Subject Attendance Details">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Subject Code</th>
+                            <th scope="col">Course Title</th>
+                            <th scope="col">Total Classes</th>
+                            <th scope="col">Attended</th>
+                            <th scope="col">Absent</th>
+                            <th scope="col">Percentage</th>
+                            <th scope="col">Eligibility Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="attendanceTableBody">
+                        <!-- Populated dynamically via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- University Policy Notice -->
+            <div style="margin-top: 25px; padding: 16px; background-color: #f8fafc; border-left: 4px solid #1e3a5f; border-radius: 4px; font-size: 14px; color: #475569;">
+                <strong>📌 University Attendance Regulations:</strong>
+                A minimum of <strong>75% aggregate attendance</strong> across both theory lectures and laboratory practicals is strictly mandatory under university academic ordinances to be eligible for end-semester examinations.
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <p>&copy; 2026 StudentHub Portal. All Rights Reserved. Dynamic Multi-Student Attendance System.</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        // Multi-Student Dynamic Attendance Database
+        let attendanceDatabase = {};
+
+        // Default bundled attendance dataset fallback
+        const bundledAttendance = {
+            "23CE045": {
+                student_name: "Mayank Shukal",
+                roll_no: "23CE045",
+                department: "Computer Engineering",
+                semester: "4th Semester",
+                overall_percentage: 91.5,
+                total_classes: 200,
+                attended_classes: 183,
+                absent_classes: 17,
+                eligibility_status: "Eligible (Excellent)",
+                subjects: [
+                    { code: "CE201", name: "Advanced Computer Architecture", total_classes: 40, attended_classes: 37, absent_classes: 3, percentage: 92.5, status: "Good" },
+                    { code: "CE202", name: "Software Engineering & Agile", total_classes: 45, attended_classes: 42, absent_classes: 3, percentage: 93.3, status: "Good" },
+                    { code: "CE203", name: "Operating Systems & Kernel Concepts", total_classes: 42, attended_classes: 38, absent_classes: 4, percentage: 90.4, status: "Good" },
+                    { code: "CE204", name: "Theory of Computation & Automata", total_classes: 38, attended_classes: 34, absent_classes: 4, percentage: 89.4, status: "Good" },
+                    { code: "CE205", name: "Web Technologies & Cloud Platforms", total_classes: 35, attended_classes: 32, absent_classes: 3, percentage: 91.4, status: "Good" }
+                ]
+            },
+            "23IT001": {
+                student_name: "John Doe",
+                roll_no: "23IT001",
+                department: "Information Technology",
+                semester: "4th Semester",
+                overall_percentage: 86.4,
+                total_classes: 200,
+                attended_classes: 173,
+                absent_classes: 27,
+                eligibility_status: "Eligible (Good)",
+                subjects: [
+                    { code: "IT201", name: "Web Technologies", total_classes: 40, attended_classes: 36, absent_classes: 4, percentage: 90.0, status: "Good" },
+                    { code: "IT202", name: "Data Structures & Algorithms", total_classes: 45, attended_classes: 39, absent_classes: 6, percentage: 86.6, status: "Good" },
+                    { code: "IT203", name: "Database Management Systems", total_classes: 42, attended_classes: 37, absent_classes: 5, percentage: 88.0, status: "Good" },
+                    { code: "IT204", name: "Computer Networks", total_classes: 38, attended_classes: 31, absent_classes: 7, percentage: 81.5, status: "Moderate" },
+                    { code: "IT205", name: "Discrete Mathematics", total_classes: 35, attended_classes: 30, absent_classes: 5, percentage: 85.7, status: "Good" }
+                ]
+            },
+            "23IT012": {
+                student_name: "Aarav Sharma",
+                roll_no: "23IT012",
+                department: "Information Technology",
+                semester: "4th Semester",
+                overall_percentage: 78.2,
+                total_classes: 200,
+                attended_classes: 156,
+                absent_classes: 44,
+                eligibility_status: "Eligible (Moderate)",
+                subjects: [
+                    { code: "IT201", name: "Web Technologies", total_classes: 40, attended_classes: 33, absent_classes: 7, percentage: 82.5, status: "Moderate" },
+                    { code: "IT202", name: "Data Structures & Algorithms", total_classes: 45, attended_classes: 34, absent_classes: 11, percentage: 75.5, status: "Moderate" },
+                    { code: "IT203", name: "Database Management Systems", total_classes: 42, attended_classes: 34, absent_classes: 8, percentage: 80.9, status: "Moderate" },
+                    { code: "IT204", name: "Computer Networks", total_classes: 38, attended_classes: 27, absent_classes: 11, percentage: 71.0, status: "Low" },
+                    { code: "IT205", name: "Discrete Mathematics", total_classes: 35, attended_classes: 28, absent_classes: 7, percentage: 80.0, status: "Moderate" }
+                ]
+            },
+            "23CE088": {
+                student_name: "Priya Patel",
+                roll_no: "23CE088",
+                department: "Computer Engineering",
+                semester: "4th Semester",
+                overall_percentage: 68.5,
+                total_classes: 200,
+                attended_classes: 137,
+                absent_classes: 63,
+                eligibility_status: "Shortage Alert (< 75%)",
+                subjects: [
+                    { code: "CE201", name: "Advanced Computer Architecture", total_classes: 40, attended_classes: 28, absent_classes: 12, percentage: 70.0, status: "Low" },
+                    { code: "CE202", name: "Software Engineering & Agile", total_classes: 45, attended_classes: 29, absent_classes: 16, percentage: 64.4, status: "Low" },
+                    { code: "CE203", name: "Operating Systems & Kernel Concepts", total_classes: 42, attended_classes: 28, absent_classes: 14, percentage: 66.6, status: "Low" },
+                    { code: "CE204", name: "Theory of Computation & Automata", total_classes: 38, attended_classes: 27, absent_classes: 11, percentage: 71.0, status: "Low" },
+                    { code: "CE205", name: "Web Technologies & Cloud Platforms", total_classes: 35, attended_classes: 25, absent_classes: 10, percentage: 71.4, status: "Low" }
+                ]
+            },
+            "23CS019": {
+                student_name: "Rohan Desai",
+                roll_no: "23CS019",
+                department: "Computer Science",
+                semester: "2nd Semester",
+                overall_percentage: 84.0,
+                total_classes: 200,
+                attended_classes: 168,
+                absent_classes: 32,
+                eligibility_status: "Eligible (Good)",
+                subjects: [
+                    { code: "CS101", name: "Object-Oriented Programming (Java)", total_classes: 40, attended_classes: 35, absent_classes: 5, percentage: 87.5, status: "Good" },
+                    { code: "CS102", name: "Computer Organization & Architecture", total_classes: 45, attended_classes: 37, absent_classes: 8, percentage: 82.2, status: "Moderate" },
+                    { code: "CS103", name: "Data Structures Basics", total_classes: 42, attended_classes: 36, absent_classes: 6, percentage: 85.7, status: "Good" },
+                    { code: "CS104", name: "Digital Logic Design", total_classes: 38, attended_classes: 31, absent_classes: 7, percentage: 81.5, status: "Moderate" },
+                    { code: "CS105", name: "Engineering Mathematics II", total_classes: 35, attended_classes: 29, absent_classes: 6, percentage: 82.8, status: "Moderate" }
+                ]
+            },
+            "23IT042": {
+                student_name: "Rahul Verma",
+                roll_no: "23IT042",
+                department: "Information Technology",
+                semester: "4th Semester",
+                overall_percentage: 92.0,
+                total_classes: 200,
+                attended_classes: 184,
+                absent_classes: 16,
+                eligibility_status: "Eligible (Excellent)",
+                subjects: [
+                    { code: "IT201", name: "Web Technologies", total_classes: 40, attended_classes: 38, absent_classes: 2, percentage: 95.0, status: "Good" },
+                    { code: "IT202", name: "Data Structures & Algorithms", total_classes: 45, attended_classes: 41, absent_classes: 4, percentage: 91.1, status: "Good" },
+                    { code: "IT203", name: "Database Management Systems", total_classes: 42, attended_classes: 39, absent_classes: 3, percentage: 92.8, status: "Good" },
+                    { code: "IT204", name: "Computer Networks", total_classes: 38, attended_classes: 34, absent_classes: 4, percentage: 89.4, status: "Good" },
+                    { code: "IT205", name: "Discrete Mathematics", total_classes: 35, attended_classes: 32, absent_classes: 3, percentage: 91.4, status: "Good" }
+                ]
+            }
+        };
+
+        // Determine current student: Check URL query param ?roll_no=... first, then localStorage user
+        function getInitialRollNo() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('roll_no')) {
+                return urlParams.get('roll_no');
+            }
+
+            const savedUser = localStorage.getItem("studenthub_user");
+            if (savedUser) {
+                try {
+                    const parsed = JSON.parse(savedUser);
+                    if (parsed.roll_no && parsed.role !== 'admin') {
+                        return parsed.roll_no;
+                    }
+                } catch(e) {}
+            }
+            return "23CE045"; // Default to Mayank Shukal
+        }
+
+        // Render attendance view for selected student
+        function renderAttendance(studentData) {
+            if (!studentData) return;
+
+            // Update Header Subtitle
+            const subtitle = document.getElementById("studentSubtitle");
+            subtitle.innerHTML = `Current Semester Attendance Overview for <strong>${studentData.student_name} (${studentData.roll_no})</strong> | ${studentData.department} - ${studentData.semester}`;
+
+            // Update Stat Cards
+            const pct = studentData.overall_percentage;
+            document.getElementById("statPercentage").textContent = pct.toFixed(1) + "%";
+            document.getElementById("statAttended").textContent = studentData.attended_classes;
+            document.getElementById("statTotal").textContent = studentData.total_classes;
+
+            const statStatus = document.getElementById("statStatus");
+            statStatus.textContent = studentData.eligibility_status;
+            if (pct >= 85) {
+                statStatus.style.color = "#10b981";
+            } else if (pct >= 75) {
+                statStatus.style.color = "#3b82f6";
+            } else {
+                statStatus.style.color = "#ef4444";
+            }
+
+            // Check for Attendance Shortage Alert
+            const alertBox = document.getElementById("attendanceAlertBox");
+            const alertText = document.getElementById("attendanceAlertText");
+            const lowSubjects = studentData.subjects.filter(s => s.percentage < 75);
+
+            if (pct < 75 || lowSubjects.length > 0) {
+                alertBox.style.display = "block";
+                const subNames = lowSubjects.map(s => `${s.name} (${s.percentage}%)`).join(", ");
+                alertText.innerHTML = `Attention <strong>${studentData.student_name}</strong>: Overall attendance is <strong>${pct}%</strong>. You have an attendance shortage (< 75%) in: <strong>${subNames || 'Coursework'}</strong>. Please contact your academic mentor.`;
+            } else {
+                alertBox.style.display = "none";
+            }
+
+            // Render Table Rows
+            const tbody = document.getElementById("attendanceTableBody");
+            tbody.innerHTML = "";
+
+            studentData.subjects.forEach((subj, idx) => {
+                const tr = document.createElement("tr");
+
+                let badgeClass = "badge-active";
+                let fillClass = "bg-success";
+                let statusLabel = "Eligible (Good)";
+
+                if (subj.percentage >= 85) {
+                    badgeClass = "badge-active";
+                    fillClass = "bg-success";
+                    statusLabel = "Eligible (Good)";
+                } else if (subj.percentage >= 75) {
+                    badgeClass = "badge-pending";
+                    fillClass = "bg-warning";
+                    statusLabel = "Eligible (Moderate)";
+                } else {
+                    badgeClass = "badge-danger";
+                    fillClass = "bg-danger";
+                    statusLabel = "Shortage (< 75%)";
+                }
+
+                tr.innerHTML = `
+                    <td><strong>${idx + 1}</strong></td>
+                    <td><code>${subj.code}</code></td>
+                    <td>
+                        <strong>${subj.name}</strong>
+                        <div class="progress-bar-container" title="${subj.percentage}% attended">
+                            <div class="progress-bar-fill ${fillClass}" style="width: ${subj.percentage}%;"></div>
+                        </div>
+                    </td>
+                    <td>${subj.total_classes}</td>
+                    <td><strong style="color: #1e3a5f;">${subj.attended_classes}</strong></td>
+                    <td><span style="color: #64748b;">${subj.absent_classes || (subj.total_classes - subj.attended_classes)}</span></td>
+                    <td><strong>${subj.percentage.toFixed(1)}%</strong></td>
+                    <td><span class="badge ${badgeClass}">${statusLabel}</span></td>
+                `;
+
+                tr.setAttribute("data-status", subj.status);
+                tr.setAttribute("data-search", `${subj.code} ${subj.name}`.toLowerCase());
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Initialize Page
+        async function initPage() {
+            let activeRoll = getInitialRollNo();
+
+            // Attempt to fetch from JSON backend
+            try {
+                const res = await fetch('../json/attendance.json');
+                const data = await res.json();
+                attendanceDatabase = Object.assign({}, bundledAttendance, data);
+            } catch(e) {
+                console.warn("Using offline attendance records:", e);
+                attendanceDatabase = bundledAttendance;
+            }
+
+            const studentSelect = document.getElementById("studentSelect");
+
+            // Ensure active roll exists in select
+            if (studentSelect) {
+                // If student is not in select options, add them dynamically
+                if (!Array.from(studentSelect.options).some(o => o.value === activeRoll)) {
+                    if (attendanceDatabase[activeRoll]) {
+                        const opt = document.createElement("option");
+                        opt.value = activeRoll;
+                        opt.textContent = `${attendanceDatabase[activeRoll].student_name} (${activeRoll}) - ${attendanceDatabase[activeRoll].department}`;
+                        studentSelect.appendChild(opt);
+                    }
+                }
+
+                studentSelect.value = activeRoll;
+
+                studentSelect.addEventListener("change", function() {
+                    const selected = this.value;
+                    const record = attendanceDatabase[selected] || bundledAttendance[selected];
+                    renderAttendance(record);
+                });
+            }
+
+            // Render initial student attendance
+            const initialRecord = attendanceDatabase[activeRoll] || bundledAttendance[activeRoll] || bundledAttendance["23CE045"];
+            renderAttendance(initialRecord);
+        }
+
+        // Real-time Search and Filter Event Listeners
+        const searchInput = document.getElementById("searchAttendance");
+        const statusFilter = document.getElementById("attendanceStatusFilter");
+        const clearBtn = document.getElementById("clearAttFilter");
+
+        function applyFilters() {
+            const query = (searchInput.value || "").toLowerCase().trim();
+            const filterVal = statusFilter.value;
+            const rows = document.querySelectorAll("#attendanceTableBody tr");
+
+            rows.forEach(r => {
+                const searchData = r.getAttribute("data-search") || "";
+                const rowStatus = r.getAttribute("data-status") || "";
+
+                const matchesSearch = query === "" || searchData.includes(query);
+                const matchesFilter = filterVal === "all" || rowStatus === filterVal;
+
+                if (matchesSearch && matchesFilter) {
+                    r.style.display = "";
+                } else {
+                    r.style.display = "none";
+                }
+            });
+        }
+
+        if (searchInput) searchInput.addEventListener("input", applyFilters);
+        if (statusFilter) statusFilter.addEventListener("change", applyFilters);
+        if (clearBtn) {
+            clearBtn.addEventListener("click", () => {
+                searchInput.value = "";
+                statusFilter.value = "all";
+                applyFilters();
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", initPage);
+    </script>
+</body>
+</html>

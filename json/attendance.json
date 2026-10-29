@@ -1,0 +1,350 @@
+{
+    "23IT001": {
+        "student_name": "John Doe",
+        "roll_no": "23IT001",
+        "department": "Information Technology",
+        "semester": "4th Semester",
+        "overall_percentage": 86.4,
+        "total_classes": 200,
+        "attended_classes": 173,
+        "absent_classes": 27,
+        "eligibility_status": "Eligible (Good)",
+        "subjects": [
+            {
+                "code": "IT201",
+                "name": "Web Technologies",
+                "total_classes": 40,
+                "attended_classes": 36,
+                "absent_classes": 4,
+                "percentage": 90.0,
+                "status": "Good"
+            },
+            {
+                "code": "IT202",
+                "name": "Data Structures & Algorithms",
+                "total_classes": 45,
+                "attended_classes": 39,
+                "absent_classes": 6,
+                "percentage": 86.6,
+                "status": "Good"
+            },
+            {
+                "code": "IT203",
+                "name": "Database Management Systems",
+                "total_classes": 42,
+                "attended_classes": 37,
+                "absent_classes": 5,
+                "percentage": 88.0,
+                "status": "Good"
+            },
+            {
+                "code": "IT204",
+                "name": "Computer Networks",
+                "total_classes": 38,
+                "attended_classes": 31,
+                "absent_classes": 7,
+                "percentage": 81.5,
+                "status": "Moderate"
+            },
+            {
+                "code": "IT205",
+                "name": "Discrete Mathematics",
+                "total_classes": 35,
+                "attended_classes": 30,
+                "absent_classes": 5,
+                "percentage": 85.7,
+                "status": "Good"
+            }
+        ]
+    },
+    "23CE045": {
+        "student_name": "Mayank Shukal",
+        "roll_no": "23CE045",
+        "department": "Computer Engineering",
+        "semester": "4th Semester",
+        "overall_percentage": 91.5,
+        "total_classes": 200,
+        "attended_classes": 183,
+        "absent_classes": 17,
+        "eligibility_status": "Eligible (Excellent)",
+        "subjects": [
+            {
+                "code": "CE201",
+                "name": "Advanced Computer Architecture",
+                "total_classes": 40,
+                "attended_classes": 37,
+                "absent_classes": 3,
+                "percentage": 92.5,
+                "status": "Good"
+            },
+            {
+                "code": "CE202",
+                "name": "Software Engineering & Agile",
+                "total_classes": 45,
+                "attended_classes": 42,
+                "absent_classes": 3,
+                "percentage": 93.3,
+                "status": "Good"
+            },
+            {
+                "code": "CE203",
+                "name": "Operating Systems & Kernel Concepts",
+                "total_classes": 42,
+                "attended_classes": 38,
+                "absent_classes": 4,
+                "percentage": 90.4,
+                "status": "Good"
+            },
+            {
+                "code": "CE204",
+                "name": "Theory of Computation & Automata",
+                "total_classes": 38,
+                "attended_classes": 34,
+                "absent_classes": 4,
+                "percentage": 89.4,
+                "status": "Good"
+            },
+            {
+                "code": "CE205",
+                "name": "Web Technologies & Cloud Platforms",
+                "total_classes": 35,
+                "attended_classes": 32,
+                "absent_classes": 3,
+                "percentage": 91.4,
+                "status": "Good"
+            }
+        ]
+    },
+    "23IT012": {
+        "student_name": "Aarav Sharma",
+        "roll_no": "23IT012",
+        "department": "Information Technology",
+        "semester": "4th Semester",
+        "overall_percentage": 78.2,
+        "total_classes": 200,
+        "attended_classes": 156,
+        "absent_classes": 44,
+        "eligibility_status": "Eligible (Moderate)",
+        "subjects": [
+            {
+                "code": "IT201",
+                "name": "Web Technologies",
+                "total_classes": 40,
+                "attended_classes": 33,
+                "absent_classes": 7,
+                "percentage": 82.5,
+                "status": "Moderate"
+            },
+            {
+                "code": "IT202",
+                "name": "Data Structures & Algorithms",
+                "total_classes": 45,
+                "attended_classes": 34,
+                "absent_classes": 11,
+                "percentage": 75.5,
+                "status": "Moderate"
+            },
+            {
+                "code": "IT203",
+                "name": "Database Management Systems",
+                "total_classes": 42,
+                "attended_classes": 34,
+                "absent_classes": 8,
+                "percentage": 80.9,
+                "status": "Moderate"
+            },
+            {
+                "code": "IT204",
+                "name": "Computer Networks",
+                "total_classes": 38,
+                "attended_classes": 27,
+                "absent_classes": 11,
+                "percentage": 71.0,
+                "status": "Low"
+            },
+            {
+                "code": "IT205",
+                "name": "Discrete Mathematics",
+                "total_classes": 35,
+                "attended_classes": 28,
+                "absent_classes": 7,
+                "percentage": 80.0,
+                "status": "Moderate"
+            }
+        ]
+    },
+    "23CE088": {
+        "student_name": "Priya Patel",
+        "roll_no": "23CE088",
+        "department": "Computer Engineering",
+        "semester": "4th Semester",
+        "overall_percentage": 68.5,
+        "total_classes": 200,
+        "attended_classes": 137,
+        "absent_classes": 63,
+        "eligibility_status": "Shortage Alert (< 75%)",
+        "subjects": [
+            {
+                "code": "CE201",
+                "name": "Advanced Computer Architecture",
+                "total_classes": 40,
+                "attended_classes": 28,
+                "absent_classes": 12,
+                "percentage": 70.0,
+                "status": "Low"
+            },
+            {
+                "code": "CE202",
+                "name": "Software Engineering & Agile",
+                "total_classes": 45,
+                "attended_classes": 29,
+                "absent_classes": 16,
+                "percentage": 64.4,
+                "status": "Low"
+            },
+            {
+                "code": "CE203",
+                "name": "Operating Systems & Kernel Concepts",
+                "total_classes": 42,
+                "attended_classes": 28,
+                "absent_classes": 14,
+                "percentage": 66.6,
+                "status": "Low"
+            },
+            {
+                "code": "CE204",
+                "name": "Theory of Computation & Automata",
+                "total_classes": 38,
+                "attended_classes": 27,
+                "absent_classes": 11,
+                "percentage": 71.0,
+                "status": "Low"
+            },
+            {
+                "code": "CE205",
+                "name": "Web Technologies & Cloud Platforms",
+                "total_classes": 35,
+                "attended_classes": 25,
+                "absent_classes": 10,
+                "percentage": 71.4,
+                "status": "Low"
+            }
+        ]
+    },
+    "23CS019": {
+        "student_name": "Rohan Desai",
+        "roll_no": "23CS019",
+        "department": "Computer Science",
+        "semester": "2nd Semester",
+        "overall_percentage": 84.0,
+        "total_classes": 200,
+        "attended_classes": 168,
+        "absent_classes": 32,
+        "eligibility_status": "Eligible (Good)",
+        "subjects": [
+            {
+                "code": "CS101",
+                "name": "Object-Oriented Programming (Java)",
+                "total_classes": 40,
+                "attended_classes": 35,
+                "absent_classes": 5,
+                "percentage": 87.5,
+                "status": "Good"
+            },
+            {
+                "code": "CS102",
+                "name": "Computer Organization & Architecture",
+                "total_classes": 45,
+                "attended_classes": 37,
+                "absent_classes": 8,
+                "percentage": 82.2,
+                "status": "Moderate"
+            },
+            {
+                "code": "CS103",
+                "name": "Data Structures Basics",
+                "total_classes": 42,
+                "attended_classes": 36,
+                "absent_classes": 6,
+                "percentage": 85.7,
+                "status": "Good"
+            },
+            {
+                "code": "CS104",
+                "name": "Digital Logic Design",
+                "total_classes": 38,
+                "attended_classes": 31,
+                "absent_classes": 7,
+                "percentage": 81.5,
+                "status": "Moderate"
+            },
+            {
+                "code": "CS105",
+                "name": "Engineering Mathematics II",
+                "total_classes": 35,
+                "attended_classes": 29,
+                "absent_classes": 6,
+                "percentage": 82.8,
+                "status": "Moderate"
+            }
+        ]
+    },
+    "23IT042": {
+        "student_name": "Rahul Verma",
+        "roll_no": "23IT042",
+        "department": "Information Technology",
+        "semester": "4th Semester",
+        "overall_percentage": 92.0,
+        "total_classes": 200,
+        "attended_classes": 184,
+        "absent_classes": 16,
+        "eligibility_status": "Eligible (Excellent)",
+        "subjects": [
+            {
+                "code": "IT201",
+                "name": "Web Technologies",
+                "total_classes": 40,
+                "attended_classes": 38,
+                "absent_classes": 2,
+                "percentage": 95.0,
+                "status": "Good"
+            },
+            {
+                "code": "IT202",
+                "name": "Data Structures & Algorithms",
+                "total_classes": 45,
+                "attended_classes": 41,
+                "absent_classes": 4,
+                "percentage": 91.1,
+                "status": "Good"
+            },
+            {
+                "code": "IT203",
+                "name": "Database Management Systems",
+                "total_classes": 42,
+                "attended_classes": 39,
+                "absent_classes": 3,
+                "percentage": 92.8,
+                "status": "Good"
+            },
+            {
+                "code": "IT204",
+                "name": "Computer Networks",
+                "total_classes": 38,
+                "attended_classes": 34,
+                "absent_classes": 4,
+                "percentage": 89.4,
+                "status": "Good"
+            },
+            {
+                "code": "IT205",
+                "name": "Discrete Mathematics",
+                "total_classes": 35,
+                "attended_classes": 32,
+                "absent_classes": 3,
+                "percentage": 91.4,
+                "status": "Good"
+            }
+        ]
+    }
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - StudentHub Portal</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- Accessible Skip to Content Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header role="banner">
+        <div class="header-content">
+            <div>
+                <h1>StudentHub Portal</h1>
+                <p class="admin-label">Account Authentication</p>
+            </div>
+            <img src="studenthub.png" alt="StudentHub Official Portal Logo" class="profile-logo">
+        </div>
+        <nav aria-label="Primary Navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="events.html">Events</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="assignment.html">Assignment</a>
+            <a href="timetable.html">Timetable</a>
+            <a href="notice.html">Notice</a>
+            <a href="faq.html">FAQ</a>
+            <a href="feedback.html">Feedback</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html" class="active" aria-current="page">Sign In</a>
+        </nav>
+    </header>
+
+    <!-- Accessible Breadcrumb Navigation -->
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item" aria-current="page">Account Sign In</li>
+        </ol>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <section class="admin-container">
+            <div class="admin-heading">
+                <div>
+                    <h2>Welcome Back</h2>
+                    <p>Sign in to access your student dashboard or administrator controls.</p>
+                </div>
+                <a href="register.html" class="primary-btn">+ Create Account</a>
+            </div>
+
+            <!-- Stats Grid / Role Highlights -->
+            <div class="student-stats">
+                <div class="stat-card">
+                    <span class="stat-icon">👨‍🎓</span>
+                    <div>
+                        <h3 style="font-size:18px;">Student Access</h3>
+                        <p>Dashboard & Timetable</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🛡️</span>
+                    <div>
+                        <h3 style="font-size:18px;">Admin Panel</h3>
+                        <p>Manage All Students</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🔒</span>
+                    <div>
+                        <h3 style="font-size:18px;">Secure Session</h3>
+                        <p>Encrypted Credentials</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">⚡</span>
+                    <div>
+                        <h3 style="font-size:18px;">Instant Sync</h3>
+                        <p>Real-time Records</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Login Form Card -->
+            <div class="form-card" style="margin-top: 25px;">
+                <h3 style="margin-top: 0; color: #1e293b; font-size: 20px;">Sign In to Account</h3>
+                <p style="color: #64748b; font-size: 14px; margin-top: -5px; margin-bottom: 20px;">Enter your username, enrollment number, or email address.</p>
+
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Username, Roll No, or Email</label>
+                        <input type="text" id="username" name="username" placeholder="e.g. 23IT001 or mayank" required autocomplete="username">
+                        <div id="usernameStatus" style="font-size: 13px; margin-top: 5px; min-height: 18px;"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your account password" required autocomplete="current-password">
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="loginSubmitBtn">🔐 Sign In</button>
+                </form>
+
+                <!-- Dynamic Alert Box for Unregistered IDs / Errors -->
+                <div id="loginAlertBox" role="alert" style="display: none; margin-top: 18px;"></div>
+                <p id="loginMessage" style="margin-top: 12px; font-weight: 600; text-align: center;"></p>
+
+                <!-- Demo Credentials Helper -->
+                <div style="margin-top: 20px; padding: 12px; background-color: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 6px; font-size: 13px; color: #475569;">
+                    <strong>💡 Demo Credentials:</strong><br>
+                    • <strong>Student:</strong> <code>23IT001</code> / <code>student123</code><br>
+                    • <strong>Admin:</strong> <code>admin</code> / <code>admin123</code>
+                </div>
+
+                <div style="text-align: center; margin-top: 20px; font-size: 14px; color: #64748b;">
+                    Don't have an account? <a href="register.html" style="color: #1e3a5f; font-weight: 600;">Register here</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 StudentHub Portal. All Rights Reserved.</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

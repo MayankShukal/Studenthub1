@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration - StudentHub Portal</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- Accessible Skip to Content Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header role="banner">
+        <div class="header-content">
+            <div>
+                <h1>StudentHub Portal</h1>
+                <p class="admin-label">Student Registration</p>
+            </div>
+            <img src="studenthub.png" alt="StudentHub Official Portal Logo" class="profile-logo">
+        </div>
+        <nav aria-label="Primary Navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="events.html">Events</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="assignment.html">Assignment</a>
+            <a href="timetable.html">Timetable</a>
+            <a href="notice.html">Notice</a>
+            <a href="faq.html">FAQ</a>
+            <a href="feedback.html">Feedback</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Sign In</a>
+        </nav>
+    </header>
+
+    <!-- Accessible Breadcrumb Navigation -->
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item" aria-current="page">Student Registration</li>
+        </ol>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <section class="admin-container">
+            <div class="admin-heading">
+                <div>
+                    <h2>Create Student Account</h2>
+                    <p>Register as a new student to access attendance, course materials, and workshop events.</p>
+                </div>
+                <a href="login.html" class="primary-btn">🔑 Already Registered? Sign In</a>
+            </div>
+
+            <!-- Stats Grid / Benefits -->
+            <div class="student-stats">
+                <div class="stat-card">
+                    <span class="stat-icon">🎓</span>
+                    <div>
+                        <h3 style="font-size:18px;">Student Profile</h3>
+                        <p>Personalized Access</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">📊</span>
+                    <div>
+                        <h3 style="font-size:18px;">Attendance</h3>
+                        <p>Live Real-time Stats</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">📝</span>
+                    <div>
+                        <h3 style="font-size:18px;">Assignments</h3>
+                        <p>Direct Submission</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🎟️</span>
+                    <div>
+                        <h3 style="font-size:18px;">Workshops</h3>
+                        <p>One-click Pass</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Registration Form Card -->
+            <div class="form-card" style="margin-top: 25px;">
+                <h3 style="margin-top: 0; color: #1e293b; font-size: 20px;">New Student Registration</h3>
+                <p style="color: #64748b; font-size: 14px; margin-top: -5px; margin-bottom: 20px;">Fill in your details below to create your official account.</p>
+
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="e.g. Rahul Verma" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Official Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="e.g. rahul.verma@studenthub.com" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="regDepartment">Department</label>
+                            <select id="regDepartment" name="department" required>
+                                <option value="Information Technology">Information Technology</option>
+                                <option value="Computer Engineering">Computer Engineering</option>
+                                <option value="Computer Science">Computer Science</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="regSemester">Semester</label>
+                            <select id="regSemester" name="semester" required>
+                                <option value="1st Semester">1st Semester</option>
+                                <option value="2nd Semester">2nd Semester</option>
+                                <option value="3rd Semester">3rd Semester</option>
+                                <option value="4th Semester" selected>4th Semester</option>
+                                <option value="5th Semester">5th Semester</option>
+                                <option value="6th Semester">6th Semester</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="password">Create Password</label>
+                            <input type="password" id="password" name="password" minlength="6" placeholder="Min. 6 characters" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" minlength="6" placeholder="Re-type password" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">✨ Complete Registration</button>
+                </form>
+
+                <p id="registrationMessage" style="margin-top: 15px; font-weight: 600; text-align: center;"></p>
+
+                <div style="text-align: center; margin-top: 20px; font-size: 14px; color: #64748b;">
+                    Already have an account? <a href="login.html" style="color: #1e3a5f; font-weight: 600;">Sign in here</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 StudentHub Portal. All Rights Reserved.</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

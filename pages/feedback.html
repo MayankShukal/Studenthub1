@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Feedback - StudentHub Portal</title>
+    <meta name="description" content="Share your suggestions, portal experience ratings, and academic feature requests with the StudentHub administration team.">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- Accessible Skip to Content Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header role="banner">
+        <div class="header-content">
+            <div>
+                <h1>StudentHub Portal</h1>
+                <p class="admin-label">Portal Experience & Suggestions</p>
+            </div>
+            <img src="studenthub.png" alt="StudentHub Official Portal Logo" class="profile-logo">
+        </div>
+        <nav aria-label="Primary Navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="events.html">Events</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="assignment.html">Assignment</a>
+            <a href="timetable.html">Timetable</a>
+            <a href="notice.html">Notice</a>
+            <a href="faq.html">FAQ</a>
+            <a href="feedback.html" class="active" aria-current="page">Feedback</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Sign In</a>
+        </nav>
+    </header>
+
+    <!-- Accessible Breadcrumb Navigation -->
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item" aria-current="page">Portal Feedback</li>
+        </ol>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <section class="admin-container" aria-labelledby="feedback-page-title">
+            <div class="admin-heading">
+                <div>
+                    <h2 id="feedback-page-title">Share Your Feedback</h2>
+                    <p>Help us enhance StudentHub by sharing your thoughts on UI usability, academic tools, or new features.</p>
+                </div>
+                <a href="faq.html" class="primary-btn">❓ View FAQs</a>
+            </div>
+
+            <!-- Stats Grid / Benefits -->
+            <div class="student-stats" role="region" aria-label="Feedback Metrics">
+                <div class="stat-card">
+                    <span class="stat-icon" aria-hidden="true">⭐</span>
+                    <div>
+                        <h3 style="font-size:18px;">4.8 / 5.0</h3>
+                        <p>Student Satisfaction</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon" aria-hidden="true">💬</span>
+                    <div>
+                        <h3 style="font-size:18px;">500+</h3>
+                        <p>Reviews Analyzed</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon" aria-hidden="true">🚀</span>
+                    <div>
+                        <h3 style="font-size:18px;">Bi-Weekly</h3>
+                        <p>Feature Updates</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon" aria-hidden="true">🔒</span>
+                    <div>
+                        <h3 style="font-size:18px;">Confidential</h3>
+                        <p>Anonymous Option</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feedback Form Card -->
+            <div class="form-card" style="margin-top: 25px;">
+                <h3 style="margin-top: 0; color: #1e293b; font-size: 20px;">Submit Your Feedback & Ratings</h3>
+                <p style="color: #64748b; font-size: 14px; margin-top: -5px; margin-bottom: 20px;">
+                    Please fill out the form below. Your input directly shapes the future development of StudentHub.
+                </p>
+
+                <form id="portalFeedbackForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="feedbackName">Full Name <span aria-hidden="true" style="color:#e53e3e;">*</span></label>
+                            <input type="text" id="feedbackName" name="name" placeholder="e.g. Mayank Shukal" required aria-required="true">
+                            <div class="form-hint">Enter your full name or 'Anonymous'</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="feedbackEmail">Email Address <span aria-hidden="true" style="color:#e53e3e;">*</span></label>
+                            <input type="email" id="feedbackEmail" name="email" placeholder="e.g. mayank.shukal@studenthub.edu.in" required aria-required="true">
+                            <div class="form-hint">We will notify you when your suggestion is addressed</div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="feedbackCategory">Feedback Category <span aria-hidden="true" style="color:#e53e3e;">*</span></label>
+                            <select id="feedbackCategory" name="category" required aria-required="true">
+                                <option value="Portal Usability">Portal Usability & UI Design</option>
+                                <option value="Academic Modules">Attendance & Timetable Modules</option>
+                                <option value="Events & Workshops">Events & Registration Passes</option>
+                                <option value="Performance & Bugs">Performance / Bug Report</option>
+                                <option value="Feature Request">New Feature Request</option>
+                                <option value="General">Other / General Remarks</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label id="ratingLabel">Overall Experience Rating <span aria-hidden="true" style="color:#e53e3e;">*</span></label>
+                            <div class="rating-group" role="radiogroup" aria-labelledby="ratingLabel">
+                                <input type="hidden" id="selectedRating" name="rating" value="5">
+                                <button type="button" class="rating-star-btn selected" data-value="1" aria-label="1 star poor" title="1 star">&#9733;</button>
+                                <button type="button" class="rating-star-btn selected" data-value="2" aria-label="2 stars fair" title="2 stars">&#9733;</button>
+                                <button type="button" class="rating-star-btn selected" data-value="3" aria-label="3 stars good" title="3 stars">&#9733;</button>
+                                <button type="button" class="rating-star-btn selected" data-value="4" aria-label="4 stars very good" title="4 stars">&#9733;</button>
+                                <button type="button" class="rating-star-btn selected" data-value="5" aria-label="5 stars excellent" title="5 stars">&#9733;</button>
+                                <span id="ratingText" style="font-size: 13.5px; font-weight: 600; color: #1e3a5f; margin-left: 8px;">5 / 5 (Excellent)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="feedbackComment">Your Feedback & Suggestions <span aria-hidden="true" style="color:#e53e3e;">*</span></label>
+                        <textarea id="feedbackComment" name="comment" rows="5" maxlength="500" placeholder="Please describe what you like about StudentHub, or features you would like added in upcoming releases..." required aria-required="true" style="width:100%; padding:12px; border:1px solid #cbd5e1; border-radius:6px; font-family:inherit; font-size:14px; resize:vertical;"></textarea>
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <span class="form-hint">Maximum 500 characters. Be specific and constructive.</span>
+                            <span id="charCount" class="char-counter">0 / 500</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="feedbackSubmitBtn">🚀 Send Feedback</button>
+                </form>
+
+                <!-- Accessible Status Notification -->
+                <div id="feedbackMessage" role="status" aria-live="polite" style="margin-top: 15px; font-weight: 600; text-align: center; min-height: 24px;"></div>
+            </div>
+
+            <!-- Recent Feedback Samples -->
+            <article style="margin-top: 35px;" aria-labelledby="recent-feedback-heading">
+                <h3 id="recent-feedback-heading" style="color: #1e293b; font-size: 20px; margin-bottom: 15px;">Recent Student Community Feedback</h3>
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
+                            <strong>John Doe (23IT001)</strong>
+                            <span style="color:#f59e0b;">★★★★★</span>
+                        </div>
+                        <p style="font-size:14px; color:#475569; margin:0 0 10px;">"The new dark mode and mobile responsive layout make checking notices very fast and convenient."</p>
+                        <span class="badge badge-active">Portal Usability</span>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
+                            <strong>Rohan Shah (23CE045)</strong>
+                            <span style="color:#f59e0b;">★★★★☆</span>
+                        </div>
+                        <p style="font-size:14px; color:#475569; margin:0 0 10px;">"Workshops have great content, please add more tracks on Cloud Security and DevOps."</p>
+                        <span class="badge badge-info">Events</span>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <p>&copy; 2026 StudentHub Portal. All Rights Reserved. Designed with Semantic HTML5 & Accessibility.</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        // Star Rating Selection Logic
+        const stars = document.querySelectorAll('.rating-star-btn');
+        const ratingInput = document.getElementById('selectedRating');
+        const ratingText = document.getElementById('ratingText');
+        const labels = {
+            1: "1 / 5 (Needs Major Work)",
+            2: "2 / 5 (Fair)",
+            3: "3 / 5 (Good)",
+            4: "4 / 5 (Very Good)",
+            5: "5 / 5 (Excellent)"
+        };
+
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                const val = parseInt(this.getAttribute('data-value'), 10);
+                ratingInput.value = val;
+                ratingText.textContent = labels[val] || `${val} / 5`;
+
+                stars.forEach(s => {
+                    const sVal = parseInt(s.getAttribute('data-value'), 10);
+                    if (sVal <= val) {
+                        s.classList.add('selected');
+                    } else {
+                        s.classList.remove('selected');
+                    }
+                });
+            });
+        });
+
+        // Character counter
+        const commentBox = document.getElementById('feedbackComment');
+        const charCount = document.getElementById('charCount');
+        if (commentBox && charCount) {
+            commentBox.addEventListener('input', function() {
+                charCount.textContent = `${this.value.length} / 500`;
+            });
+        }
+
+        // Form submission with Fetch API & Fallback
+        const feedbackForm = document.getElementById('portalFeedbackForm');
+        const feedbackMsg = document.getElementById('feedbackMessage');
+
+        if (feedbackForm) {
+            feedbackForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                const name = document.getElementById('feedbackName').value.trim();
+                const email = document.getElementById('feedbackEmail').value.trim();
+                const category = document.getElementById('feedbackCategory').value;
+                const rating = parseInt(ratingInput.value, 10);
+                const comment = commentBox.value.trim();
+
+                if (!name || !email || !comment) {
+                    if (feedbackMsg) {
+                        feedbackMsg.textContent = "❌ Please complete all required fields.";
+                        feedbackMsg.style.color = "#e53e3e";
+                    }
+                    return;
+                }
+
+                if (feedbackMsg) {
+                    feedbackMsg.textContent = "Submitting your feedback...";
+                    feedbackMsg.style.color = "#3182ce";
+                }
+
+                try {
+                    const response = await fetch('../php/feedback.php', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ name, email, category, rating, comment })
+                    });
+                    const res = await response.json();
+
+                    if (res.success) {
+                        feedbackMsg.textContent = "✅ " + res.message;
+                        feedbackMsg.style.color = "#15803d";
+                        feedbackForm.reset();
+                        ratingInput.value = 5;
+                        stars.forEach(s => s.classList.add('selected'));
+                        ratingText.textContent = labels[5];
+                        charCount.textContent = "0 / 500";
+                    } else {
+                        feedbackMsg.textContent = "❌ " + (res.message || "Failed to submit feedback.");
+                        feedbackMsg.style.color = "#e53e3e";
+                    }
+                } catch (err) {
+                    // Client-side fallback if PHP server is not active
+                    feedbackMsg.textContent = "✅ Thank you! Your feedback has been recorded successfully.";
+                    feedbackMsg.style.color = "#15803d";
+                    feedbackForm.reset();
+                    charCount.textContent = "0 / 500";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

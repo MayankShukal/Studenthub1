@@ -1,0 +1,263 @@
+{
+    "site": {
+        "title": "StudentHub",
+        "heading": "Student Hub",
+        "welcomeTitle": "Welcome to StudentHub Portal",
+
+        "welcomeText": [
+            "StudentHub is the official digital gateway for university students, faculty, and campus administrators. Designed to streamline academic workflows and foster a vibrant campus community, StudentHub brings together everything you need for a successful academic journey in one place.",
+
+            "Through this portal, students can easily track course schedules, register for upcoming skill-building workshops, access digital library archives, monitor examination results, and manage their personal academic profiles with ease."
+        ]
+    },
+
+    "navigation": [
+
+        {
+            "name": "Home",
+            "link": "index.html"
+        },
+
+        {
+            "name": "About",
+            "link": "about.html"
+        },
+
+        {
+            "name": "Register",
+            "link": "register.html"
+        },
+
+        {
+            "name": "Login",
+            "link": "login.html"
+        },
+
+        {
+            "name": "Dashboard",
+            "link": "dashboard.html"
+        },
+
+        {
+            "name": "Events",
+            "link": "events.html"
+        },
+
+        {
+            "name": "Profile",
+            "link": "profile.html"
+        },
+
+        {
+            "name": "Contact",
+            "link": "contact.html"
+        },
+
+        {
+            "name": "Admin",
+            "link": "admin.html"
+        }
+
+    ],
+
+
+    "notification": {
+
+        "message": "Workshop registration is now open"
+
+    },
+
+
+    "features": [
+
+        {
+            "icon": "🎯",
+
+            "title": "Event & Workshop Management",
+
+            "description": "Stay informed about upcoming hands-on technical bootcamps, guest lectures, cultural conventions, and sports meets. Register with a single click and receive calendar reminders."
+        },
+
+
+        {
+            "icon": "📊",
+
+            "title": "Student Performance Dashboard",
+
+            "description": "Track your academic progress in real-time. View subject-wise attendance percentages, assignment submission deadlines, SGPA/CGPA breakdown, and downloadable grade cards."
+        },
+
+
+        {
+            "icon": "💬",
+
+            "title": "Peer Collaboration & Mentorship",
+
+            "description": "Connect with faculty mentors, join project study groups, collaborate on open-source repositories, and participate in peer-to-peer learning forums."
+        },
+
+
+        {
+            "icon": "📚",
+
+            "title": "Central Resource Library",
+
+            "description": "Access syllabus copies, previous years' question papers, recommended reference books, lab manuals, and video lectures uploaded directly by department professors."
+        }
+
+    ],
+
+
+    "slider": [
+
+        {
+            "image": "banner-bg.jpg",
+            "alt": "CHARUSAT Campus"
+        },
+
+        {
+            "image": "studenthub.png",
+            "alt": "StudentHub Campus"
+        }
+
+    ],
+
+
+    "events": [
+
+        {
+            "icon": "🚀",
+
+            "title": "Full-Stack Web Development Workshop 2026",
+
+            "date": "August 20, 2026",
+
+            "time": "10:00 AM – 4:00 PM",
+
+            "venue": "Computer Engineering Lab 3",
+
+            "description": "Join our intensive 1-day hands-on workshop on modern web technologies including HTML5, CSS3, JavaScript ES6+, and responsive web design. All attendees will build a live portfolio project and receive a certificate of completion."
+        },
+
+
+        {
+            "icon": "🤖",
+
+            "title": "Artificial Intelligence & Machine Learning Seminar",
+
+            "date": "August 28, 2026",
+
+            "time": "2:00 PM – 5:00 PM",
+
+            "venue": "Main University Auditorium",
+
+            "description": "Industry leaders from leading technology companies will discuss neural networks, deep learning applications in healthcare and robotics, and career roadmaps in AI engineering."
+        },
+
+
+        {
+            "icon": "🏆",
+
+            "title": "Annual Hackathon - Code For Future 4.0",
+
+            "date": "September 12-13, 2026",
+
+            "time": "24 Hours",
+
+            "venue": "University Innovation Center",
+
+            "description": "Form teams of up to 4 members to solve real-world industry challenges in Smart Education, Healthcare, and Sustainable Tech. Mentors will be present throughout the event."
+        }
+
+    ],
+
+
+    "guidelines": [
+
+        {
+            "title": "Attendance Requirement",
+
+            "description": "Minimum 75% attendance is mandatory in theory and practical sessions to be eligible for end-semester examinations."
+        },
+
+
+        {
+            "title": "Lab Submission Timelines",
+
+            "description": "All lab manuals and code assignments must be submitted to the respective portal folder by Friday 5:00 PM."
+        },
+
+
+        {
+            "title": "Identity Cards",
+
+            "description": "Carrying your official university RFID Student ID card is compulsory while inside campus premises, library, and examination halls."
+        },
+
+
+        {
+            "title": "Library Book Retention",
+
+            "description": "Students can borrow up to 4 books simultaneously for a maximum duration of 14 days without late renewal fees."
+        }
+
+    ],
+
+
+    "notices": [
+
+        {
+            "title": "Lab Submission Deadline",
+
+            "description": "Department of Computer Engineering practical journals due by Friday, 5:00 PM."
+        },
+
+
+        {
+            "title": "Workshop Registration Open",
+
+            "description": "Seats are filling fast for the Web Development Bootcamp. Register via the Events tab."
+        },
+
+
+        {
+            "title": "Mid-Semester Examination Schedule",
+
+            "description": "Tentative timetables for B.Tech Semester III & V have been published on the bulletin board."
+        },
+
+
+        {
+            "title": "Scholarship Application Window",
+
+            "description": "Merit cum means financial assistance forms are open until August 30."
+        },
+
+
+        {
+            "title": "Sports Club Tryouts",
+
+            "description": "Basketball and Table Tennis team selections will commence this Saturday at the Campus Sports Complex."
+        }
+
+    ],
+
+
+    "support": {
+
+        "title": "Need Assistance? Student Support Helpdesk",
+
+        "description": "If you encounter technical issues with portal login, course registration, or fee payments, please contact our helpdesk.",
+
+        "email": "support@studenthub.edu.in",
+
+        "phone": "+91 98765 43210",
+
+        "office": "Student Activity Center, Block B, Room 102"
+
+    },
+
+
+    "footer": "© 2026 StudentHub. All Rights Reserved."
+
+}

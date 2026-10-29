@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "name": "Aarav Sharma",
+        "email": "aarav.sharma@charusat.edu.in",
+        "message": "Inquiry regarding bus transport pass renewal for semester 4.",
+        "submitted_at": "2026-08-01 14:22:10",
+        "status": "Responded"
+    },
+    {
+        "id": 2,
+        "name": "Priya Patel",
+        "email": "priya.patel@charusat.edu.in",
+        "message": "Unable to access the previous year question papers in the Library tab.",
+        "submitted_at": "2026-08-03 09:45:30",
+        "status": "Pending"
+    }
+]

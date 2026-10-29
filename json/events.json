@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "title": "Full-Stack Web Development Workshop 2026",
+        "icon": "🚀",
+        "category": "Workshop",
+        "date": "2026-08-20",
+        "time": "10:00 AM – 4:00 PM",
+        "venue": "Computer Engineering Lab 3",
+        "speaker": "Dr. Rajesh Sharma",
+        "seats": 60,
+        "registered_count": 45,
+        "description": "Join our intensive 1-day hands-on workshop on modern web technologies including HTML5, CSS3, JavaScript ES6+, PHP, and responsive web design.",
+        "registered_users": ["23IT001", "23CE045"]
+    },
+    {
+        "id": 2,
+        "title": "Artificial Intelligence & Machine Learning Seminar",
+        "icon": "🤖",
+        "category": "Seminar",
+        "date": "2026-08-28",
+        "time": "2:00 PM – 5:00 PM",
+        "venue": "Main University Auditorium",
+        "speaker": "Prof. Ananya Patel",
+        "seats": 150,
+        "registered_count": 120,
+        "description": "Industry leaders from top technology companies discuss neural networks, deep learning applications in healthcare, and career roadmaps in AI engineering.",
+        "registered_users": ["23IT001"]
+    },
+    {
+        "id": 3,
+        "title": "Annual Hackathon - Code For Future 4.0",
+        "icon": "🏆",
+        "category": "Competition",
+        "date": "2026-09-12",
+        "time": "24 Hours (Overnight)",
+        "venue": "University Innovation Center",
+        "speaker": "Tech Council CHARUSAT",
+        "seats": 200,
+        "registered_count": 140,
+        "description": "Form teams of up to 4 members to solve real-world industry challenges in Smart Education, Healthcare, and Sustainable Tech. ₹50,000 cash prizes.",
+        "registered_users": ["23CE045"]
+    },
+    {
+        "id": 4,
+        "title": "Cloud Computing & DevOps Masterclass",
+        "icon": "☁️",
+        "category": "Masterclass",
+        "date": "2026-09-25",
+        "time": "11:00 AM – 2:00 PM",
+        "venue": "Seminar Hall B",
+        "speaker": "Mr. Sameer Desai (AWS Certified)",
+        "seats": 80,
+        "registered_count": 32,
+        "description": "Learn containerization with Docker, Kubernetes orchestration, and continuous integration pipelines on AWS Cloud infrastructure.",
+        "registered_users": []
+    }
+]

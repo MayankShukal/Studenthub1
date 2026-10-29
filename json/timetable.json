@@ -1,0 +1,35 @@
+{
+    "semester": "4th Semester - IT",
+    "schedule": {
+        "Monday": [
+            { "time": "09:00 - 10:00 AM", "subject": "Web Technologies", "room": "Room 204", "faculty": "Dr. R. Sharma" },
+            { "time": "10:00 - 11:00 AM", "subject": "Data Structures", "room": "Room 204", "faculty": "Prof. A. Patel" },
+            { "time": "11:15 - 01:15 PM", "subject": "Web Tech Lab (Group A)", "room": "Lab 3", "faculty": "Dr. R. Sharma" },
+            { "time": "02:00 - 03:00 PM", "subject": "Database Systems", "room": "Room 204", "faculty": "Prof. V. Dave" }
+        ],
+        "Tuesday": [
+            { "time": "09:00 - 10:00 AM", "subject": "Computer Networks", "room": "Room 205", "faculty": "Prof. K. Shah" },
+            { "time": "10:00 - 11:00 AM", "subject": "Discrete Mathematics", "room": "Room 205", "faculty": "Dr. M. Joshi" },
+            { "time": "11:15 - 01:15 PM", "subject": "DBMS Lab (Group A)", "room": "Lab 1", "faculty": "Prof. V. Dave" },
+            { "time": "02:00 - 04:00 PM", "subject": "Library / Self-Study", "room": "Central Library", "faculty": "N/A" }
+        ],
+        "Wednesday": [
+            { "time": "09:00 - 10:00 AM", "subject": "Web Technologies", "room": "Room 204", "faculty": "Dr. R. Sharma" },
+            { "time": "10:00 - 11:00 AM", "subject": "Database Systems", "room": "Room 204", "faculty": "Prof. V. Dave" },
+            { "time": "11:15 - 01:15 PM", "subject": "Data Structures Lab", "room": "Lab 2", "faculty": "Prof. A. Patel" },
+            { "time": "02:00 - 03:00 PM", "subject": "Computer Networks", "room": "Room 204", "faculty": "Prof. K. Shah" }
+        ],
+        "Thursday": [
+            { "time": "09:00 - 10:00 AM", "subject": "Discrete Mathematics", "room": "Room 205", "faculty": "Dr. M. Joshi" },
+            { "time": "10:00 - 11:00 AM", "subject": "Data Structures", "room": "Room 205", "faculty": "Prof. A. Patel" },
+            { "time": "11:15 - 01:15 PM", "subject": "Networks Lab (Group A)", "room": "Lab 4", "faculty": "Prof. K. Shah" },
+            { "time": "02:00 - 03:00 PM", "subject": "Web Technologies", "room": "Room 205", "faculty": "Dr. R. Sharma" }
+        ],
+        "Friday": [
+            { "time": "09:00 - 10:00 AM", "subject": "Database Systems", "room": "Room 204", "faculty": "Prof. V. Dave" },
+            { "time": "10:00 - 11:00 AM", "subject": "Computer Networks", "room": "Room 204", "faculty": "Prof. K. Shah" },
+            { "time": "11:15 - 01:15 PM", "subject": "Mini-Project / Mentorship", "room": "Innovation Lab", "faculty": "Mentors" },
+            { "time": "02:00 - 04:00 PM", "subject": "Club & Extra-curricular", "room": "Activity Hall", "faculty": "Student Council" }
+        ]
+    }
+}

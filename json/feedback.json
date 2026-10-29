@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "John Doe",
+        "email": "john.doe@studenthub.com",
+        "rating": 5,
+        "category": "Portal Usability",
+        "comment": "The new dark mode and mobile responsive layout make checking notices very fast and convenient.",
+        "submitted_at": "2026-08-04 16:10:00"
+    },
+    {
+        "id": 2,
+        "name": "Rohan Shah",
+        "email": "rohan.shah@studenthub.com",
+        "rating": 4,
+        "category": "Events",
+        "comment": "Workshops have great content, please add more tracks on Cloud Security.",
+        "submitted_at": "2026-08-06 18:30:22"
+    }
+]

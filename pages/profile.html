@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile - StudentHub Portal</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div>
+                <h1>StudentHub Portal</h1>
+                <p class="admin-label">Student Profile</p>
+            </div>
+            <img src="studenthub.png" alt="StudentHub Logo" class="profile-logo">
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="assignment.html">Assignment</a>
+            <a href="timetable.html">Timetable</a>
+            <a href="notice.html">Notice</a>
+            <a href="profile.html" class="active">Profile</a>
+            <a href="admin.html">All Students</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="admin-container">
+            <div class="admin-heading">
+                <div>
+                    <h2>Student Profile Details</h2>
+                    <p>Manage your academic profile and personal contact credentials.</p>
+                </div>
+                <button class="primary-btn" id="editProfileBtn">✏️ Edit Profile</button>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="student-stats">
+                <div class="stat-card">
+                    <span class="stat-icon">🎓</span>
+                    <div>
+                        <h3>8.85</h3>
+                        <p>Cumulative CGPA</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">📅</span>
+                    <div>
+                        <h3>4th</h3>
+                        <p>Current Semester</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🏢</span>
+                    <div>
+                        <h3>IT</h3>
+                        <p>Department</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🆔</span>
+                    <div>
+                        <h3>23IT001</h3>
+                        <p>Enrollment Number</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Card -->
+            <div class="profile-card-layout">
+                <div class="profile-avatar-box">
+                    <div class="profile-avatar-icon">👨‍🎓</div>
+                    <h3 style="margin: 0 0 5px;" id="dispName">John Doe</h3>
+                    <p style="margin: 0; color: #64748b; font-size: 13px;" id="dispRole">B.Tech Student (IT)</p>
+                    <div style="margin-top: 15px;">
+                        <span class="badge badge-active">Active Enrollment</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="margin-top: 0; font-size: 18px; color: #1e293b; border-bottom: 1px solid #edf2f7; padding-bottom: 8px;">Academic & Personal Credentials</h3>
+                    
+                    <div class="profile-details-grid">
+                        <div>
+                            <div class="profile-field-label">Full Name</div>
+                            <div class="profile-field-val" id="profileName">John Doe</div>
+                        </div>
+                        <div>
+                            <div class="profile-field-label">Enrollment / Roll No</div>
+                            <div class="profile-field-val" id="profileRoll">23IT001</div>
+                        </div>
+                        <div>
+                            <div class="profile-field-label">Email Address</div>
+                            <div class="profile-field-val" id="profileEmail">john.doe@studenthub.com</div>
+                        </div>
+                        <div>
+                            <div class="profile-field-label">Phone Number</div>
+                            <div class="profile-field-val" id="profilePhone">+91 98765 43210</div>
+                        </div>
+                        <div>
+                            <div class="profile-field-label">Department</div>
+                            <div class="profile-field-val" id="profileDept">Information Technology</div>
+                        </div>
+                        <div>
+                            <div class="profile-field-label">Academic Year / Semester</div>
+                            <div class="profile-field-val" id="profileSem">2nd Year (4th Semester)</div>
+                        </div>
+                        <div>
+                            <div class="profile-field-label">Campus Advisor</div>
+                            <div class="profile-field-val">Dr. Rajesh Sharma</div>
+                        </div>
+                        <div>
+                            <div class="profile-field-label">Library Card No</div>
+                            <div class="profile-field-val">LIB-2024-8842</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Edit Profile Modal -->
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <button id="closeEditModal" class="close-modal" type="button">&times;</button>
+                <h2 style="margin-top:0;">Edit Profile Information</h2>
+                <form id="editProfileForm">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="inputName" value="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="inputEmail" value="john.doe@studenthub.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="inputPhone" value="+91 98765 43210" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Department</label>
+                        <select id="inputDept">
+                            <option value="Information Technology" selected>Information Technology</option>
+                            <option value="Computer Engineering">Computer Engineering</option>
+                            <option value="Computer Science">Computer Science</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">Save Changes</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 StudentHub Portal. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const editModal = document.getElementById("editModal");
+        document.getElementById("editProfileBtn").addEventListener("click", () => editModal.style.display = "block");
+        document.getElementById("closeEditModal").addEventListener("click", () => editModal.style.display = "none");
+        window.onclick = (e) => { if (e.target === editModal) editModal.style.display = "none"; };
+
+        document.getElementById("editProfileForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const n = document.getElementById("inputName").value;
+            const em = document.getElementById("inputEmail").value;
+            const ph = document.getElementById("inputPhone").value;
+            const dp = document.getElementById("inputDept").value;
+
+            document.getElementById("dispName").textContent = n;
+            document.getElementById("profileName").textContent = n;
+            document.getElementById("profileEmail").textContent = em;
+            document.getElementById("profilePhone").textContent = ph;
+            document.getElementById("profileDept").textContent = dp;
+
+            editModal.style.display = "none";
+            alert("✅ Profile updated successfully!");
+        });
+    </script>
+</body>
+</html>

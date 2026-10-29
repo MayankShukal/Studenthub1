@@ -1,0 +1,41 @@
+[
+    {
+        "id": "ASG-101",
+        "subject": "Web Technologies",
+        "title": "Build a Responsive College Portal with PHP & JSON",
+        "assigned_date": "2026-08-01",
+        "due_date": "2026-08-15",
+        "status": "Pending",
+        "max_marks": 50,
+        "submission_file": "studenthub_v1.zip"
+    },
+    {
+        "id": "ASG-102",
+        "subject": "Data Structures & Algorithms",
+        "title": "Implementation of AVL Trees and Graphs in C++",
+        "assigned_date": "2026-07-25",
+        "due_date": "2026-08-08",
+        "status": "Submitted",
+        "max_marks": 30,
+        "marks_obtained": 28
+    },
+    {
+        "id": "ASG-103",
+        "subject": "Database Management Systems",
+        "title": "ER-Diagram and Normalization Case Study (Hospital Management)",
+        "assigned_date": "2026-08-02",
+        "due_date": "2026-08-18",
+        "status": "In Progress",
+        "max_marks": 25
+    },
+    {
+        "id": "ASG-104",
+        "subject": "Computer Networks",
+        "title": "Packet Tracer Simulation of Subnetting & OSPF Routing",
+        "assigned_date": "2026-07-28",
+        "due_date": "2026-08-10",
+        "status": "Submitted",
+        "max_marks": 40,
+        "marks_obtained": 38
+    }
+]

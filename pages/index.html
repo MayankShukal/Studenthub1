@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub Portal - Home</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- Accessible Skip to Content Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header role="banner">
+        <div class="header-content">
+            <div>
+                <h1>StudentHub Portal</h1>
+                <p class="admin-label">Official Academic & Campus Portal</p>
+            </div>
+            <img src="studenthub.png" alt="StudentHub Official Portal Logo" class="profile-logo">
+        </div>
+        <nav aria-label="Primary Navigation">
+            <a href="index.html" class="active" aria-current="page">Home</a>
+            <a href="about.html">About</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="events.html">Events</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="assignment.html">Assignment</a>
+            <a href="timetable.html">Timetable</a>
+            <a href="notice.html">Notice</a>
+            <a href="faq.html">FAQ</a>
+            <a href="feedback.html">Feedback</a>
+            <a href="contact.html">Contact</a>
+            <a href="admin.html">All Students</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <section class="admin-container">
+            <div class="admin-heading">
+                <div>
+                    <h2>Welcome to StudentHub Portal</h2>
+                    <p>Streamlining academic workflows, campus events, and university communication in one place.</p>
+                </div>
+                <div style="display:flex; gap:10px;">
+                    <a href="login.html" class="primary-btn">🔑 Sign In</a>
+                    <a href="register.html" class="secondary-btn">+ Register</a>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="student-stats">
+                <div class="stat-card">
+                    <span class="stat-icon">👨‍🎓</span>
+                    <div>
+                        <h3>10,000+</h3>
+                        <p>Enrolled Students</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🚀</span>
+                    <div>
+                        <h3>4</h3>
+                        <p>Active Workshops</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">📚</span>
+                    <div>
+                        <h3>500+</h3>
+                        <p>Library Resources</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">📢</span>
+                    <div>
+                        <h3>5</h3>
+                        <p>Campus Notices</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHARUSAT Campus Gallery / Slider -->
+            <div style="margin: 25px 0; text-align: center;">
+                <h3 style="margin-bottom: 6px; color: #1e293b; font-size: 20px;">CHARUSAT Campus Gallery</h3>
+                <p style="color: #64748b; font-size: 14px; margin-top: 0;">Explore high-definition campus buildings, laboratories, and grounds.</p>
+                
+                <div class="slider-container">
+                    <button id="prev-slide" class="slider-btn" type="button" aria-label="Previous Slide">&#10094;</button>
+                    <img id="slider-image" src="banner-bg.jpg" alt="Campus Gallery">
+                    <button id="next-slide" class="slider-btn" type="button" aria-label="Next Slide">&#10095;</button>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <h3 style="margin: 30px 0 15px; color: #1e293b; font-size: 20px;">Core Portal Capabilities</h3>
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <div class="dashboard-icon">🎯</div>
+                    <h3>Event & Workshop Portal</h3>
+                    <p>Stay informed about upcoming technical bootcamps, guest lectures, and hackathons with instant pass generation.</p>
+                    <a href="events.html">Browse Events &rarr;</a>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="dashboard-icon">📊</div>
+                    <h3>Performance Dashboard</h3>
+                    <p>Track your academic attendance percentages, coursework deadlines, CGPA breakdown, and grade sheets.</p>
+                    <a href="dashboard.html">View Dashboard &rarr;</a>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="dashboard-icon">⏱️</div>
+                    <h3>Class Schedule & Rooms</h3>
+                    <p>Real-time timetables with laboratory slots, faculty mentor allocations, and classroom locations.</p>
+                    <a href="timetable.html">Check Timetable &rarr;</a>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="dashboard-icon">📢</div>
+                    <h3>Notices & Circulars</h3>
+                    <p>Direct official communications for mid-semester examinations, scholarship windows, and deadlines.</p>
+                    <a href="notice.html">Read Notices &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Academic Guidelines Table -->
+            <h3 style="margin: 30px 0 15px; color: #1e293b; font-size: 20px;">Campus Guidelines & Key Policies</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Policy / Guideline</th>
+                            <th>Requirement</th>
+                            <th>Authority</th>
+                            <th>Applicability</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1</strong></td>
+                            <td><strong>Minimum Attendance Rule</strong></td>
+                            <td>Minimum 75% attendance mandatory in theory and practical sessions</td>
+                            <td>Academic Council</td>
+                            <td><span class="badge badge-inactive">Mandatory</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>2</strong></td>
+                            <td><strong>Lab Journal Submissions</strong></td>
+                            <td>All practical manuals must be submitted by Friday 5:00 PM</td>
+                            <td>Department Head</td>
+                            <td><span class="badge badge-pending">Weekly</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>3</strong></td>
+                            <td><strong>RFID Student ID Cards</strong></td>
+                            <td>Compulsory to wear official university RFID card inside campus</td>
+                            <td>Campus Security</td>
+                            <td><span class="badge badge-active">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>4</strong></td>
+                            <td><strong>Library Book Loans</strong></td>
+                            <td>Up to 4 books borrowed simultaneously for 14 days renewal</td>
+                            <td>Central Library</td>
+                            <td><span class="badge badge-info">Standard</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 StudentHub Portal. All Rights Reserved.</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

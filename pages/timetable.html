@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable - StudentHub Portal</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .day-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .day-btn {
+            padding: 10px 22px;
+            background-color: #e2e8f0;
+            color: #1e293b;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+        }
+        .day-btn.active, .day-btn:hover {
+            background-color: #1e3a5f;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div>
+                <h1>StudentHub Portal</h1>
+                <p class="admin-label">Class Timetable</p>
+            </div>
+            <img src="studenthub.png" alt="StudentHub Logo" class="profile-logo">
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="assignment.html">Assignment</a>
+            <a href="timetable.html" class="active">Timetable</a>
+            <a href="notice.html">Notice</a>
+            <a href="profile.html">Profile</a>
+            <a href="admin.html">All Students</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="admin-container">
+            <div class="admin-heading">
+                <div>
+                    <h2>Weekly Class Schedule</h2>
+                    <p>Information Technology - 4th Semester (Academic Year 2026)</p>
+                </div>
+                <button class="primary-btn" onclick="window.print()">🖨️ Print Schedule</button>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="student-stats">
+                <div class="stat-card">
+                    <span class="stat-icon">⏱️</span>
+                    <div>
+                        <h3>24</h3>
+                        <p>Weekly Lecture Hours</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🧪</span>
+                    <div>
+                        <h3>8</h3>
+                        <p>Laboratory Hours</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🏢</span>
+                    <div>
+                        <h3>Room 204</h3>
+                        <p>Primary Class Hall</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">👨‍🏫</span>
+                    <div>
+                        <h3>5</h3>
+                        <p>Faculty Professors</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day Selector Tabs -->
+            <div class="day-tabs">
+                <button class="day-btn active" onclick="switchDay('Monday', this)">Monday</button>
+                <button class="day-btn" onclick="switchDay('Tuesday', this)">Tuesday</button>
+                <button class="day-btn" onclick="switchDay('Wednesday', this)">Wednesday</button>
+                <button class="day-btn" onclick="switchDay('Thursday', this)">Thursday</button>
+                <button class="day-btn" onclick="switchDay('Friday', this)">Friday</button>
+            </div>
+
+            <!-- Table -->
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Time Slot</th>
+                            <th>Subject / Course</th>
+                            <th>Session Type</th>
+                            <th>Room / Hall</th>
+                            <th>Faculty Professor</th>
+                        </tr>
+                    </thead>
+                    <tbody id="timetableBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 StudentHub Portal. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const scheduleData = {
+            "Monday": [
+                { time: "09:00 - 10:00 AM", subject: "Web Technologies", type: "Lecture", room: "Room 204", faculty: "Dr. R. Sharma" },
+                { time: "10:00 - 11:00 AM", subject: "Data Structures & Algorithms", type: "Lecture", room: "Room 204", faculty: "Prof. A. Patel" },
+                { time: "11:15 - 01:15 PM", subject: "Web Technologies Lab (Group A)", type: "Practical / Lab", room: "Computer Lab 3", faculty: "Dr. R. Sharma" },
+                { time: "02:00 - 03:00 PM", subject: "Database Management Systems", type: "Lecture", room: "Room 204", faculty: "Prof. V. Dave" }
+            ],
+            "Tuesday": [
+                { time: "09:00 - 10:00 AM", subject: "Computer Networks", type: "Lecture", room: "Room 205", faculty: "Prof. K. Shah" },
+                { time: "10:00 - 11:00 AM", subject: "Discrete Mathematics", type: "Lecture", room: "Room 205", faculty: "Dr. M. Joshi" },
+                { time: "11:15 - 01:15 PM", subject: "DBMS Lab (Group A)", type: "Practical / Lab", room: "Computer Lab 1", faculty: "Prof. V. Dave" },
+                { time: "02:00 - 04:00 PM", subject: "Library / Self-Study", type: "Self Study", room: "Central Library", faculty: "Librarian" }
+            ],
+            "Wednesday": [
+                { time: "09:00 - 10:00 AM", subject: "Web Technologies", type: "Lecture", room: "Room 204", faculty: "Dr. R. Sharma" },
+                { time: "10:00 - 11:00 AM", subject: "Database Management Systems", type: "Lecture", room: "Room 204", faculty: "Prof. V. Dave" },
+                { time: "11:15 - 01:15 PM", subject: "Data Structures Lab (Group A)", type: "Practical / Lab", room: "Computer Lab 2", faculty: "Prof. A. Patel" },
+                { time: "02:00 - 03:00 PM", subject: "Computer Networks", type: "Lecture", room: "Room 204", faculty: "Prof. K. Shah" }
+            ],
+            "Thursday": [
+                { time: "09:00 - 10:00 AM", subject: "Discrete Mathematics", type: "Lecture", room: "Room 205", faculty: "Dr. M. Joshi" },
+                { time: "10:00 - 11:00 AM", subject: "Data Structures", type: "Lecture", room: "Room 205", faculty: "Prof. A. Patel" },
+                { time: "11:15 - 01:15 PM", subject: "Networks Lab (Group A)", type: "Practical / Lab", room: "Computer Lab 4", faculty: "Prof. K. Shah" },
+                { time: "02:00 - 03:00 PM", subject: "Web Technologies", type: "Lecture", room: "Room 205", faculty: "Dr. R. Sharma" }
+            ],
+            "Friday": [
+                { time: "09:00 - 10:00 AM", subject: "Database Systems", type: "Lecture", room: "Room 204", faculty: "Prof. V. Dave" },
+                { time: "10:00 - 11:00 AM", subject: "Computer Networks", type: "Lecture", room: "Room 204", faculty: "Prof. K. Shah" },
+                { time: "11:15 - 01:15 PM", subject: "Mini-Project / Mentorship", type: "Project", room: "Innovation Lab", faculty: "Faculty Mentors" },
+                { time: "02:00 - 04:00 PM", subject: "Student Activity & Clubs", type: "Activity", room: "Activity Hall", faculty: "Student Council" }
+            ]
+        };
+
+        function renderDay(day) {
+            const tbody = document.getElementById("timetableBody");
+            tbody.innerHTML = "";
+            const rows = scheduleData[day] || [];
+            rows.forEach((r, idx) => {
+                const tr = document.createElement("tr");
+                const badgeType = r.type.includes("Lab") ? "badge-info" : (r.type === "Lecture" ? "badge-active" : "badge-pending");
+                tr.innerHTML = `
+                    <td><strong>${idx + 1}</strong></td>
+                    <td><code>${r.time}</code></td>
+                    <td><strong>${r.subject}</strong></td>
+                    <td><span class="badge ${badgeType}">${r.type}</span></td>
+                    <td>${r.room}</td>
+                    <td>${r.faculty}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function switchDay(day, btn) {
+            document.querySelectorAll(".day-btn").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            renderDay(day);
+        }
+
+        renderDay("Monday");
+    </script>
+</body>
+</html>

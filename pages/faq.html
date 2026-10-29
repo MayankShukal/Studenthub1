@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions (FAQ) - StudentHub Portal</title>
+    <meta name="description" content="Find answers to common questions regarding StudentHub registration, attendance, examination schedules, event passes, and technical support.">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- Accessible Skip to Content Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header role="banner">
+        <div class="header-content">
+            <div>
+                <h1>StudentHub Portal</h1>
+                <p class="admin-label">Campus Knowledgebase & FAQs</p>
+            </div>
+            <img src="studenthub.png" alt="StudentHub Official Portal Logo" class="profile-logo">
+        </div>
+        <nav aria-label="Primary Navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="events.html">Events</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="assignment.html">Assignment</a>
+            <a href="timetable.html">Timetable</a>
+            <a href="notice.html">Notice</a>
+            <a href="faq.html" class="active" aria-current="page">FAQ</a>
+            <a href="feedback.html">Feedback</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Sign In</a>
+        </nav>
+    </header>
+
+    <!-- Accessible Breadcrumb Navigation -->
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item" aria-current="page">Frequently Asked Questions</li>
+        </ol>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <section class="admin-container" aria-labelledby="faq-page-title">
+            <div class="admin-heading">
+                <div>
+                    <h2 id="faq-page-title">Frequently Asked Questions</h2>
+                    <p>Instant answers to help you navigate academic modules, account settings, and campus events.</p>
+                </div>
+                <div style="display:flex; gap:10px;">
+                    <a href="contact.html" class="primary-btn">📞 Need Help? Contact Us</a>
+                    <a href="feedback.html" class="secondary-btn">⭐ Submit Feedback</a>
+                </div>
+            </div>
+
+            <!-- Stats / Knowledge Highlights -->
+            <div class="student-stats" role="region" aria-label="FAQ Summary Highlights">
+                <div class="stat-card">
+                    <span class="stat-icon" aria-hidden="true">💡</span>
+                    <div>
+                        <h3 style="font-size:18px;">16+ Topics</h3>
+                        <p>Curated Student Guides</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon" aria-hidden="true">⏱️</span>
+                    <div>
+                        <h3 style="font-size:18px;">24 / 7</h3>
+                        <p>Self-Service Answers</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon" aria-hidden="true">🛡️</span>
+                    <div>
+                        <h3 style="font-size:18px;">Verified</h3>
+                        <p>Official Policies</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon" aria-hidden="true">🎓</span>
+                    <div>
+                        <h3 style="font-size:18px;">CHARUSAT</h3>
+                        <p>Academic Norms</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Controls: Search and Filter -->
+            <div class="student-controls" role="search" aria-label="FAQ search and filters">
+                <div class="search-box">
+                    <label for="faqSearch" class="visually-hidden" style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0);">Search FAQ questions</label>
+                    <input type="text" id="faqSearch" placeholder="Type keywords: attendance, password, hackathon, grading..." aria-label="Search FAQ questions">
+                </div>
+                <select id="faqCategoryFilter" aria-label="Filter FAQs by Category">
+                    <option value="all">All Categories</option>
+                    <option value="General">General</option>
+                    <option value="Account & Security">Account & Security</option>
+                    <option value="Academic">Academic</option>
+                    <option value="Events & Workshops">Events & Workshops</option>
+                    <option value="Assignments">Assignments</option>
+                    <option value="Support & Feedback">Support & Feedback</option>
+                </select>
+                <button id="clearFaqFilter" class="clear-btn" type="button">Clear</button>
+            </div>
+
+            <!-- Accordion Container -->
+            <div class="faq-accordion" id="faqAccordion" role="region" aria-label="FAQ Accordion List">
+                <!-- FAQ Item 1 -->
+                <article class="faq-item" data-category="General">
+                    <button type="button" class="faq-question" id="faq-q-1" aria-expanded="false" aria-controls="faq-a-1">
+                        <span>1. What is the StudentHub Portal?</span>
+                        <span class="faq-icon" aria-hidden="true">&#9662;</span>
+                    </button>
+                    <div id="faq-a-1" class="faq-answer" role="region" aria-labelledby="faq-q-1">
+                        <p>StudentHub is the unified digital campus portal for students, faculty, and administrators. It integrates attendance monitoring, event registration, class timetables, assignments, and campus notices into a single accessible interface.</p>
+                    </div>
+                </article>
+
+                <!-- FAQ Item 2 -->
+                <article class="faq-item" data-category="General">
+                    <button type="button" class="faq-question" id="faq-q-2" aria-expanded="false" aria-controls="faq-a-2">
+                        <span>2. Who can access the StudentHub Portal?</span>
+                        <span class="faq-icon" aria-hidden="true">&#9662;</span>
+                    </button>
+                    <div id="faq-a-2" class="faq-answer" role="region" aria-labelledby="faq-q-2">
+                        <p>Enrolled students, faculty members, and authorized university administrators can log in using their institutional credentials or student enrollment roll number.</p>
+                    </div>
+                </article>
+
+                <!-- FAQ Item 3 -->
+                <article class="faq-item" data-category="Account & Security">
+                    <button type="button" class="faq-question" id="faq-q-3" aria-expanded="false" aria-controls="faq-a-3">
+                        <span>3. How do I register for a new student account?</span>
+                        <span class="faq-icon" aria-hidden="true">&#9662;</span>
+                    </button>
+                    <div id="faq-a-3" class="faq-answer" role="region" aria-labelledby="faq-q-3">
+                        <p>Navigate to the <a href="register.html">Register page</a> from the navigation bar or home page. Provide your full name, official institutional email, enrollment roll number, department, semester, and create a secure password of at least 6 characters.</p>
+                    </div>
+                </article>
+
+                <!-- FAQ Item 4 -->
+                <article class="faq-item" data-category="Account & Security">
+                    <button type="button" class="faq-question" id="faq-q-4" aria-expanded="false" aria-controls="faq-a-4">
+                        <span>4. What should I do if I forget my password?</span>
+                        <span class="faq-icon" aria-hidden="true">&#9662;</span>
+                    </button>
+                    <div id="faq-a-4" class="faq-answer" role="region" aria-labelledby="faq-q-4">
+                        <p>You can reach out to the Student Support Helpdesk via the <a href="contact.html">Contact page</a> or visit SAC Block B Room 102 with your valid student ID card to request an authorized credential reset.</p>
+                    </div>
+                </article>
+
+                <!-- FAQ Item 5 -->
+                <article class="faq-item" data-category="Account & Security">
+                    <button type="button" class="faq-question" id="faq-q-5" aria-expanded="false" aria-controls="faq-a-5">
+                        <span>5. How are user passwords protected in StudentHub?</span>
+                        <span class="faq-icon" aria-hidden="true">&#9662;</span>
+                    </button>
+                    <div id="faq-a-5" class="faq-answer" role="region" aria-labelledby="faq-q-5">
+                        <p>Passwords are securely hashed before storage using the robust <code>bcrypt</code> algorithm via PHP's <code>password_hash()</code> function, ensuring that plain-text passwords are never saved in the database.</p>
+                    </div>
+                </article>
+
+                <!-- FAQ Item 6 -->
+                <article class="faq-item" data-category="Academic">
+                    <button type="button" class="faq-question" id="faq-q-6" aria-expanded="false" aria-controls="faq-a-6">
+                        <span>6. How often is student attendance data updated?</span>
+                        <span class="faq-icon" aria-hidden="true">&#9662;</span>
+                    </button>
+                    <div id="faq-a-6" class="faq-answer" role="region" aria-labelledby="faq-q-6">
+                        <p>Course attendance is updated at the conclusion of each daily lecture and practical laboratory session by the respective faculty instructor.</p>
+                    </div>
+                </article>
+
+                <!-- FAQ Item 7 -->
+                <article class="faq-item" data-category="Academic">
+                    <button type="button" class="faq-question" id="faq-q-7" aria-expanded="false" aria-controls="faq-a-7">
+                        <span>7. What is the minimum attendance requirement?</span>
+                        <span class="faq-icon" aria-hidden="true">&#9662;</span>
+                    </button>
+                    <div id="faq-a-7" class="faq-answer" role="region" aria-labelledby="faq-q-7">
+                        <p>As per university academic regulations, students must maintain a minimum of 80% aggregate attendance in theory and laboratory sessions to remain eligible for end-semester examinations.</p>
+                    </div>
+                </article>
+
+                <!-- FAQ Item 8 -->
+                <article class="faq-item" data-category="Events & Workshops">
+                    <button type="button" class="faq-question" id="faq-q-8" aria-expanded="false" aria-controls="faq-a-8">
+                        <span>8. How do I register for campus hackathons and workshops?</span>
+                        <span class="faq-icon" aria-hidden="true">&#9662;</span>
+                    </button>
+                    <div id="faq-a-8" class="faq-answer" role="region" aria-labelledby="faq-q-8">
+                        <p>Visit the <a href="events.html">Events & Workshops</a> page, select your desired event from the catalog, and click the 'Register' button. Upon registration, an electronic event pass is linked to your student enrollment profile.</p>
+                    </div>
+                </article>
+
+                <!-- FAQ Item 9 -->
+                <article class="faq-item" data-category="Support & Feedback">
+                    <button type="button" class="faq-question" id="faq-q-9" aria-expanded="false" aria-controls="faq-a-9">
+                        <span>9. Is the StudentHub Portal accessible for screen readers?</span>
+                        <span class="faq-icon" aria-hidden="true">&#9662;</span>
+                    </button>
+                    <div id="faq-a-9" class="faq-answer" role="region" aria-labelledby="faq-q-9">
+                        <p>Yes, StudentHub adheres strictly to WCAG 2.1 AA accessibility guidelines, featuring semantic HTML5 tags (header, nav, main, section, article, footer), explicit ARIA attributes, skip-to-content links, visible keyboard focus rings, and descriptive alternative text for all imagery.</p>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Helpdesk Support Card -->
+            <aside class="dashboard-card" style="margin-top: 30px; text-align: center; background-color: #f8fafc; border: 1px dashed #cbd5e1;" aria-label="Still need assistance">
+                <h3>Still have unanswered questions?</h3>
+                <p>Our academic administration and technical support staff are available Monday through Saturday to assist you.</p>
+                <div style="margin-top: 15px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+                    <a href="contact.html" class="primary-btn">✉️ Contact Helpdesk</a>
+                    <a href="feedback.html" class="secondary-btn">⭐ Suggest an Improvement</a>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <p>&copy; 2026 StudentHub Portal. All Rights Reserved. Designed with Semantic HTML5 & Accessibility.</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        // Collapsible Accordion logic for FAQ page
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const item = this.parentElement;
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                
+                // Toggle current item
+                this.setAttribute('aria-expanded', !isExpanded);
+                item.classList.toggle('active');
+            });
+        });
+
+        // FAQ Search & Filter logic
+        const faqSearch = document.getElementById('faqSearch');
+        const faqCategory = document.getElementById('faqCategoryFilter');
+        const clearFaqBtn = document.getElementById('clearFaqFilter');
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        function filterFaqs() {
+            const query = (faqSearch ? faqSearch.value.toLowerCase().trim() : '');
+            const category = (faqCategory ? faqCategory.value : 'all');
+
+            faqItems.forEach(item => {
+                const questionText = item.querySelector('.faq-question').innerText.toLowerCase();
+                const answerText = item.querySelector('.faq-answer').innerText.toLowerCase();
+                const itemCat = item.getAttribute('data-category');
+
+                const matchesQuery = query === '' || questionText.includes(query) || answerText.includes(query);
+                const matchesCat = category === 'all' || itemCat === category;
+
+                if (matchesQuery && matchesCat) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        if (faqSearch) faqSearch.addEventListener('input', filterFaqs);
+        if (faqCategory) faqCategory.addEventListener('change', filterFaqs);
+        if (clearFaqBtn) {
+            clearFaqBtn.addEventListener('click', () => {
+                if (faqSearch) faqSearch.value = '';
+                if (faqCategory) faqCategory.value = 'all';
+                filterFaqs();
+            });
+        }
+    </script>
+</body>
+</html>

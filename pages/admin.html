@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Students - StudentHub Portal</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div>
+                <h1>StudentHub Portal</h1>
+                <p class="admin-label">Administrator Panel</p>
+            </div>
+            <img src="studenthub.png" alt="StudentHub Logo" class="profile-logo">
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="assignment.html">Assignment</a>
+            <a href="timetable.html">Timetable</a>
+            <a href="notice.html">Notice</a>
+            <a href="profile.html">Profile</a>
+            <a href="admin.html" class="active">All Students</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="admin-container">
+            <div class="admin-heading">
+                <div>
+                    <h2>All Students</h2>
+                    <p>Manage and view all registered StudentHub students.</p>
+                </div>
+                <button class="add-student-btn" id="addStudentBtn" type="button">+ Add Student</button>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="student-stats">
+                <div class="stat-card">
+                    <span class="stat-icon">👨‍🎓</span>
+                    <div>
+                        <h3 id="totalStudents">0</h3>
+                        <p>Total Students</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">💻</span>
+                    <div>
+                        <h3 id="itStudents">0</h3>
+                        <p>IT Students</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">⚙️</span>
+                    <div>
+                        <h3 id="ceStudents">0</h3>
+                        <p>CE Students</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🎓</span>
+                    <div>
+                        <h3 id="activeStudents">0</h3>
+                        <p>Active Students</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Controls -->
+            <div class="student-controls">
+                <div class="search-box">
+                    <input type="text" id="searchStudent" placeholder="Search by name, enrollment or email...">
+                </div>
+                <select id="departmentFilter">
+                    <option value="all">All Departments</option>
+                    <option value="Information Technology">Information Technology</option>
+                    <option value="Computer Engineering">Computer Engineering</option>
+                    <option value="Computer Science">Computer Science</option>
+                </select>
+                <select id="semesterFilter">
+                    <option value="all">All Semesters</option>
+                    <option value="1st Semester">Semester 1</option>
+                    <option value="2nd Semester">Semester 2</option>
+                    <option value="3rd Semester">Semester 3</option>
+                    <option value="4th Semester">Semester 4</option>
+                    <option value="5th Semester">Semester 5</option>
+                    <option value="6th Semester">Semester 6</option>
+                    <option value="7th Semester">Semester 7</option>
+                    <option value="8th Semester">Semester 8</option>
+                </select>
+                <button id="clearFilter" class="clear-btn" type="button">Clear</button>
+            </div>
+
+            <!-- Table -->
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Student</th>
+                            <th>Enrollment</th>
+                            <th>Department</th>
+                            <th>Semester</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTableBody"></tbody>
+                </table>
+            </div>
+
+            <p id="noStudents" class="no-students" style="display: none;">No students found.</p>
+        </section>
+
+        <!-- View Details Modal -->
+        <div id="studentModal" class="modal">
+            <div class="modal-content">
+                <button id="closeModal" class="close-modal" type="button">&times;</button>
+                <div id="studentDetails"></div>
+            </div>
+        </div>
+
+        <!-- Add Student Modal -->
+        <div id="addStudentModal" class="modal">
+            <div class="modal-content">
+                <button id="closeAddModal" class="close-modal" type="button">&times;</button>
+                <h2 style="margin-top:0;">Add New Student</h2>
+                <form id="studentForm">
+                    <div class="form-group">
+                        <label for="studentName">Full Name</label>
+                        <input type="text" id="studentName" required placeholder="e.g. Rahul Verma">
+                    </div>
+                    <div class="form-group">
+                        <label for="studentEnrollment">Enrollment Number</label>
+                        <input type="text" id="studentEnrollment" required placeholder="e.g. 23IT042">
+                    </div>
+                    <div class="form-group">
+                        <label for="studentDepartment">Department</label>
+                        <select id="studentDepartment" required>
+                            <option value="">Select Department</option>
+                            <option value="Information Technology">Information Technology</option>
+                            <option value="Computer Engineering">Computer Engineering</option>
+                            <option value="Computer Science">Computer Science</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="studentSemester">Semester</label>
+                        <select id="studentSemester" required>
+                            <option value="">Select Semester</option>
+                            <option value="1st Semester">1st Semester</option>
+                            <option value="2nd Semester">2nd Semester</option>
+                            <option value="3rd Semester">3rd Semester</option>
+                            <option value="4th Semester">4th Semester</option>
+                            <option value="5th Semester">5th Semester</option>
+                            <option value="6th Semester">6th Semester</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="studentEmail">Email</label>
+                        <input type="email" id="studentEmail" required placeholder="e.g. rahul.verma@studenthub.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="studentStatus">Status</label>
+                        <select id="studentStatus" required>
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">+ Save Student</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 StudentHub Portal. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let studentsList = [
+            { id: 1, name: "John Doe", roll_no: "23IT001", department: "Information Technology", semester: "4th Semester", email: "john.doe@studenthub.com", status: "Active" },
+            { id: 2, name: "Mayank Shukal", roll_no: "25IT045", department: "Computer Engineering", semester: "3th Semester", email: "mayank.shukal@studenthub.edu.in", status: "Active" },
+            { id: 3, name: "Aarav Sharma", roll_no: "23IT012", department: "Information Technology", semester: "4th Semester", email: "aarav.sharma@studenthub.com", status: "Active" },
+            { id: 4, name: "Priya Patel", roll_no: "23CE088", department: "Computer Engineering", semester: "4th Semester", email: "priya.patel@studenthub.com", status: "Inactive" },
+            { id: 5, name: "Rohan Desai", roll_no: "23CS019", department: "Computer Science", semester: "2nd Semester", email: "rohan.desai@studenthub.com", status: "Active" }
+        ];
+
+        // Fetch users from users.json if available
+        fetch('../json/users.json')
+            .then(res => res.json())
+            .then(data => {
+                if (Array.isArray(data) && data.length > 0) {
+                    studentsList = data.map((u, i) => ({
+                        id: u.id || (i + 1),
+                        name: u.name,
+                        roll_no: u.roll_no || ('23IT' + (i + 1)),
+                        department: u.department || 'Information Technology',
+                        semester: u.semester || '4th Semester',
+                        email: u.email,
+                        status: u.status || 'Active'
+                    }));
+                }
+                renderStudents(studentsList);
+                updateStats(studentsList);
+            })
+            .catch(() => {
+                renderStudents(studentsList);
+                updateStats(studentsList);
+            });
+
+        function updateStats(list) {
+            document.getElementById("totalStudents").textContent = list.length;
+            document.getElementById("itStudents").textContent = list.filter(s => s.department === "Information Technology").length;
+            document.getElementById("ceStudents").textContent = list.filter(s => s.department === "Computer Engineering").length;
+            document.getElementById("activeStudents").textContent = list.filter(s => s.status === "Active").length;
+        }
+
+        function renderStudents(list) {
+            const tbody = document.getElementById("studentTableBody");
+            const noMsg = document.getElementById("noStudents");
+            tbody.innerHTML = "";
+
+            if (list.length === 0) {
+                noMsg.style.display = "block";
+                return;
+            }
+            noMsg.style.display = "none";
+
+            list.forEach((s, idx) => {
+                const tr = document.createElement("tr");
+                const badgeClass = s.status === "Active" ? "badge-active" : "badge-inactive";
+                tr.innerHTML = `
+                    <td><strong>${idx + 1}</strong></td>
+                    <td><strong>${s.name}</strong></td>
+                    <td><code>${s.roll_no}</code></td>
+                    <td>${s.department}</td>
+                    <td>${s.semester}</td>
+                    <td>${s.email}</td>
+                    <td><span class="badge ${badgeClass}">${s.status}</span></td>
+                    <td>
+                        <button class="table-btn table-btn-view" onclick="viewStudent(${s.id})">View</button>
+                        <a href="attendance.html?roll_no=${encodeURIComponent(s.roll_no)}" class="table-btn table-btn-view" style="text-decoration:none; display:inline-block; background-color:#eff6ff; color:#2563eb; padding: 4px 8px;" title="View Student Attendance">Attendance</a>
+                        <button class="table-btn table-btn-del" onclick="deleteStudent(${s.id})">Delete</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Filtering
+        function applyFilters() {
+            const searchVal = document.getElementById("searchStudent").value.toLowerCase();
+            const deptVal = document.getElementById("departmentFilter").value;
+            const semVal = document.getElementById("semesterFilter").value;
+
+            const filtered = studentsList.filter(s => {
+                const matchesSearch = s.name.toLowerCase().includes(searchVal) ||
+                                      s.roll_no.toLowerCase().includes(searchVal) ||
+                                      s.email.toLowerCase().includes(searchVal);
+                const matchesDept = (deptVal === "all") || (s.department === deptVal);
+                const matchesSem = (semVal === "all") || (s.semester.includes(semVal));
+                return matchesSearch && matchesDept && matchesSem;
+            });
+
+            renderStudents(filtered);
+            updateStats(filtered);
+        }
+
+        document.getElementById("searchStudent").addEventListener("input", applyFilters);
+        document.getElementById("departmentFilter").addEventListener("change", applyFilters);
+        document.getElementById("semesterFilter").addEventListener("change", applyFilters);
+
+        document.getElementById("clearFilter").addEventListener("click", () => {
+            document.getElementById("searchStudent").value = "";
+            document.getElementById("departmentFilter").value = "all";
+            document.getElementById("semesterFilter").value = "all";
+            renderStudents(studentsList);
+            updateStats(studentsList);
+        });
+
+        // Modals
+        const addModal = document.getElementById("addStudentModal");
+        const viewModal = document.getElementById("studentModal");
+
+        document.getElementById("addStudentBtn").addEventListener("click", () => addModal.style.display = "block");
+        document.getElementById("closeAddModal").addEventListener("click", () => addModal.style.display = "none");
+        document.getElementById("closeModal").addEventListener("click", () => viewModal.style.display = "none");
+
+        window.onclick = (e) => {
+            if (e.target === addModal) addModal.style.display = "none";
+            if (e.target === viewModal) viewModal.style.display = "none";
+        };
+
+        // Add Student Form Submission
+        document.getElementById("studentForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const newS = {
+                id: Date.now(),
+                name: document.getElementById("studentName").value.trim(),
+                roll_no: document.getElementById("studentEnrollment").value.trim(),
+                department: document.getElementById("studentDepartment").value,
+                semester: document.getElementById("studentSemester").value,
+                email: document.getElementById("studentEmail").value.trim(),
+                status: document.getElementById("studentStatus").value
+            };
+            studentsList.unshift(newS);
+            renderStudents(studentsList);
+            updateStats(studentsList);
+            document.getElementById("studentForm").reset();
+            addModal.style.display = "none";
+        });
+
+        window.viewStudent = function(id) {
+            const s = studentsList.find(x => x.id === id);
+            if (!s) return;
+            document.getElementById("studentDetails").innerHTML = `
+                <h2 style="margin-top:0;">Student Profile Details</h2>
+                <p><strong>Name:</strong> ${s.name}</p>
+                <p><strong>Enrollment:</strong> ${s.roll_no}</p>
+                <p><strong>Department:</strong> ${s.department}</p>
+                <p><strong>Semester:</strong> ${s.semester}</p>
+                <p><strong>Email:</strong> ${s.email}</p>
+                <p><strong>Status:</strong> <span class="badge ${s.status === 'Active' ? 'badge-active' : 'badge-inactive'}">${s.status}</span></p>
+            `;
+            viewModal.style.display = "block";
+        };
+
+        window.deleteStudent = function(id) {
+            if (confirm("Are you sure you want to remove this student?")) {
+                studentsList = studentsList.filter(s => s.id !== id);
+                renderStudents(studentsList);
+                updateStats(studentsList);
+            }
+        };
+    </script>
+</body>
+</html>

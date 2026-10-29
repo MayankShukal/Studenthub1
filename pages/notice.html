@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notice Board - StudentHub Portal</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div>
+                <h1>StudentHub Portal</h1>
+                <p class="admin-label">Campus Announcements</p>
+            </div>
+            <img src="studenthub.png" alt="StudentHub Logo" class="profile-logo">
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="assignment.html">Assignment</a>
+            <a href="timetable.html">Timetable</a>
+            <a href="notice.html" class="active">Notice</a>
+            <a href="profile.html">Profile</a>
+            <a href="admin.html">All Students</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="admin-container">
+            <div class="admin-heading">
+                <div>
+                    <h2>Campus Notice Board</h2>
+                    <p>Official university notices, exam circulars, and departmental bulletins.</p>
+                </div>
+                <button class="primary-btn" id="postNoticeBtn">+ Post New Notice</button>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="student-stats">
+                <div class="stat-card">
+                    <span class="stat-icon">📢</span>
+                    <div>
+                        <h3 id="totalNoticesCount">5</h3>
+                        <p>Total Notices</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🚨</span>
+                    <div>
+                        <h3>1</h3>
+                        <p>Urgent Deadlines</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">📝</span>
+                    <div>
+                        <h3>2</h3>
+                        <p>Exam Schedules</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🎯</span>
+                    <div>
+                        <h3>2</h3>
+                        <p>Workshops & Events</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Controls -->
+            <div class="student-controls">
+                <div class="search-box">
+                    <input type="text" id="searchNotice" placeholder="Search notices by keyword or subject...">
+                </div>
+                <select id="noticeCategoryFilter">
+                    <option value="all">All Categories</option>
+                    <option value="Academic">Academic</option>
+                    <option value="Exam">Examinations</option>
+                    <option value="Workshop">Workshops</option>
+                    <option value="Sports">Sports & Clubs</option>
+                </select>
+                <button id="clearNoticeFilter" class="clear-btn" type="button">Clear</button>
+            </div>
+
+            <!-- Table -->
+            <div class="table-container">
+                <table id="noticeTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Badge</th>
+                            <th>Notice Title</th>
+                            <th>Category</th>
+                            <th>Date</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody id="noticeTableBody">
+                        <tr>
+                            <td><strong>1</strong></td>
+                            <td><span class="badge badge-inactive">Urgent</span></td>
+                            <td><strong>Lab Submission Deadline</strong></td>
+                            <td>Academic</td>
+                            <td>Aug 14, 2026</td>
+                            <td>Department practical journals due by Friday, 5:00 PM.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2</strong></td>
+                            <td><span class="badge badge-active">New</span></td>
+                            <td><strong>Workshop Registration Open</strong></td>
+                            <td>Workshop</td>
+                            <td>Aug 12, 2026</td>
+                            <td>Seats filling fast for Web Development Bootcamp 2026.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3</strong></td>
+                            <td><span class="badge badge-pending">Important</span></td>
+                            <td><strong>Mid-Semester Examination Schedule</strong></td>
+                            <td>Exam</td>
+                            <td>Aug 10, 2026</td>
+                            <td>Tentative timetables for B.Tech Semesters III & V published.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4</strong></td>
+                            <td><span class="badge badge-info">General</span></td>
+                            <td><strong>Scholarship Application Window</strong></td>
+                            <td>Academic</td>
+                            <td>Aug 08, 2026</td>
+                            <td>Merit-cum-means financial assistance forms open until Aug 30.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5</strong></td>
+                            <td><span class="badge badge-info">Activity</span></td>
+                            <td><strong>Sports Club Tryouts</strong></td>
+                            <td>Sports</td>
+                            <td>Aug 05, 2026</td>
+                            <td>Basketball & Table Tennis selections this Saturday.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Post Notice Modal -->
+        <div id="noticeModal" class="modal">
+            <div class="modal-content">
+                <button id="closeNoticeModal" class="close-modal" type="button">&times;</button>
+                <h2 style="margin-top:0;">Post New Notice</h2>
+                <form id="newNoticeForm">
+                    <div class="form-group">
+                        <label>Notice Title</label>
+                        <input type="text" id="newNoticeTitle" required placeholder="e.g. Campus Placement Drive">
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select id="newNoticeCategory" required>
+                            <option value="Academic">Academic</option>
+                            <option value="Exam">Examinations</option>
+                            <option value="Workshop">Workshop</option>
+                            <option value="Sports">Sports</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Priority Badge</label>
+                        <select id="newNoticeBadge">
+                            <option value="New">New</option>
+                            <option value="Important">Important</option>
+                            <option value="Urgent">Urgent</option>
+                            <option value="General">General</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Description Details</label>
+                        <textarea id="newNoticeDesc" rows="4" required placeholder="Enter full announcement message..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">+ Publish Notice</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 StudentHub Portal. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const nModal = document.getElementById("noticeModal");
+        document.getElementById("postNoticeBtn").addEventListener("click", () => nModal.style.display = "block");
+        document.getElementById("closeNoticeModal").addEventListener("click", () => nModal.style.display = "none");
+        window.onclick = (e) => { if (e.target === nModal) nModal.style.display = "none"; };
+
+        document.getElementById("newNoticeForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const title = document.getElementById("newNoticeTitle").value;
+            const cat = document.getElementById("newNoticeCategory").value;
+            const badge = document.getElementById("newNoticeBadge").value;
+            const desc = document.getElementById("newNoticeDesc").value;
+
+            const tbody = document.getElementById("noticeTableBody");
+            const tr = document.createElement("tr");
+            const badgeClass = badge === "Urgent" ? "badge-inactive" : (badge === "Important" ? "badge-pending" : "badge-active");
+            tr.innerHTML = `
+                <td><strong>#</strong></td>
+                <td><span class="badge ${badgeClass}">${badge}</span></td>
+                <td><strong>${title}</strong></td>
+                <td>${cat}</td>
+                <td>Today</td>
+                <td>${desc}</td>
+            `;
+            tbody.prepend(tr);
+            nModal.style.display = "none";
+            document.getElementById("newNoticeForm").reset();
+            alert("✅ Notice published!");
+        });
+
+        // Filter
+        document.getElementById("searchNotice").addEventListener("input", function() {
+            const q = this.value.toLowerCase();
+            document.querySelectorAll("#noticeTableBody tr").forEach(r => {
+                r.style.display = r.textContent.toLowerCase().includes(q) ? "" : "none";
+            });
+        });
+    </script>
+</body>
+</html>

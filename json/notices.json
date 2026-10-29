@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "title": "Lab Submission Deadline",
+        "category": "Academic",
+        "date": "2026-08-14",
+        "badge": "Urgent",
+        "description": "Department of Computer Engineering practical journals due by Friday, 5:00 PM. Please ensure all assignments are verified by your lab tutor."
+    },
+    {
+        "id": 2,
+        "title": "Workshop Registration Open",
+        "category": "Workshop",
+        "date": "2026-08-12",
+        "badge": "New",
+        "description": "Seats are filling fast for the Web Development Bootcamp. Register via the Events tab on StudentHub."
+    },
+    {
+        "id": 3,
+        "title": "Mid-Semester Examination Schedule",
+        "category": "Exam",
+        "date": "2026-08-10",
+        "badge": "Important",
+        "description": "Tentative timetables for B.Tech Semester III & V have been published on the bulletin board and portal."
+    },
+    {
+        "id": 4,
+        "title": "Scholarship Application Window",
+        "category": "Financial",
+        "date": "2026-08-08",
+        "badge": "General",
+        "description": "Merit-cum-means financial assistance forms are open until August 30. Submit attested documents to the Admin office."
+    },
+    {
+        "id": 5,
+        "title": "Sports Club Tryouts",
+        "category": "Sports",
+        "date": "2026-08-05",
+        "badge": "Activity",
+        "description": "Basketball and Table Tennis team selections will commence this Saturday at the Campus Sports Complex."
+    }
+]

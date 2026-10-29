@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "category": "General",
+        "question": "What is the StudentHub Portal?",
+        "answer": "StudentHub is the unified digital campus portal for CHARUSAT students, faculty, and administrators. It integrates attendance monitoring, event registration, class timetables, assignments, and campus notices into a single accessible interface."
+    },
+    {
+        "id": 2,
+        "category": "General",
+        "question": "Who can access the StudentHub Portal?",
+        "answer": "Enrolled students, faculty members, and authorized university administrators can log in using their institutional credentials or student enrollment roll number."
+    },
+    {
+        "id": 3,
+        "category": "Account & Security",
+        "question": "How do I register for a new student account?",
+        "answer": "Navigate to the Register page from the navigation bar or home page. Provide your full name, official institutional email, enrollment roll number, department, semester, and create a secure password of at least 6 characters."
+    },
+    {
+        "id": 4,
+        "category": "Account & Security",
+        "question": "What should I do if I forget my password?",
+        "answer": "You can reach out to the Student Support Helpdesk via the Contact page or visit SAC Block B Room 102 with your valid student ID card to request an authorized credential reset."
+    },
+    {
+        "id": 5,
+        "category": "Account & Security",
+        "question": "How are user passwords protected in StudentHub?",
+        "answer": "Passwords are securely hashed before storage using the robust bcrypt algorithm via PHP's password_hash() function, ensuring that plain-text passwords are never saved in the database."
+    },
+    {
+        "id": 6,
+        "category": "Academic",
+        "question": "How often is student attendance data updated?",
+        "answer": "Course attendance is updated at the conclusion of each daily lecture and practical laboratory session by the respective faculty instructor."
+    },
+    {
+        "id": 7,
+        "category": "Academic",
+        "question": "What is the minimum attendance requirement?",
+        "answer": "As per university academic regulations, students must maintain a minimum of 80% aggregate attendance in theory and laboratory sessions to remain eligible for end-semester examinations."
+    },
+    {
+        "id": 8,
+        "category": "Academic",
+        "question": "Where can I view upcoming mid-semester exam timetables?",
+        "answer": "Mid-semester examination timetables, seat allocations, and circulars are posted under the Notice section and highlighted directly on your Student Dashboard."
+    },
+    {
+        "id": 9,
+        "category": "Events & Workshops",
+        "question": "How do I register for campus hackathons and workshops?",
+        "answer": "Visit the Events & Workshops page, select your desired event from the catalog, and click the 'Register' button. Upon registration, an electronic event pass is linked to your student enrollment profile."
+    },
+    {
+        "id": 10,
+        "category": "Events & Workshops",
+        "question": "Is there a registration fee for StudentHub technical workshops?",
+        "answer": "Most technical bootcamps, guest lectures, and student hackathons hosted on campus are complimentary for enrolled students unless explicitly stated in the event details."
+    },
+    {
+        "id": 11,
+        "category": "Events & Workshops",
+        "question": "Can I cancel my event registration if I have a conflict?",
+        "answer": "Yes, you can manage your registrations through 'My Event Passes' on the Events page to release your reserved seat for students on the waiting list."
+    },
+    {
+        "id": 12,
+        "category": "Assignments",
+        "question": "How do I submit pending course assignments?",
+        "answer": "Navigate to the Assignment module from the navigation bar. Review pending submission deadlines, requirements, and click 'Submit' to upload your solution report or code repository link."
+    },
+    {
+        "id": 13,
+        "category": "Assignments",
+        "question": "What file formats are accepted for lab journal submissions?",
+        "answer": "Accepted file formats include PDF documents (.pdf), source code archives (.zip, .tar.gz), and Jupyter Notebooks (.ipynb) with a file size limit of 15 MB."
+    },
+    {
+        "id": 14,
+        "category": "Support & Feedback",
+        "question": "How can I report a bug or suggest a new portal feature?",
+        "answer": "Visit the Feedback page to submit ratings and suggestions, or use the Contact form to send a priority support message directly to the engineering team."
+    },
+    {
+        "id": 15,
+        "category": "Support & Feedback",
+        "question": "Does StudentHub support dark mode and mobile devices?",
+        "answer": "Yes! StudentHub features a fully responsive mobile-first layout that adapts to smartphone, tablet, and desktop viewports, with a persistent Light/Dark mode switcher saved to your local preferences."
+    },
+    {
+        "id": 16,
+        "category": "Support & Feedback",
+        "question": "Is the StudentHub Portal accessible for screen readers?",
+        "answer": "Yes, StudentHub adheres to WCAG 2.1 AA accessibility standards, featuring semantic HTML5 tags, ARIA attributes, skip-to-content shortcuts, keyboard focus indicators, and descriptive image alt tags."
+    }
+]
